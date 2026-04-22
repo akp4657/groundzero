@@ -1,0 +1,36 @@
+extends layouts/base
+
+append variables
+    - pageTitle = 'Events & tickets | Ground Zero Wrestling'
+    - pageDescription = 'Upcoming Ground Zero shows, ticket links, and how to support the brand.'
+    - activeNav = 'events'
+
+block content
+    header.gz-page-header
+        .container.px-4.px-lg-5
+            h1.display-5 Events &amp; tickets
+            p.lead.mb-0 Live cards, training showcases, and special collaborations across Upstate New York.
+
+    section.page-section
+        .container.px-4.px-lg-5
+            .row.g-4
+                .col-md-6
+                    .card.h-100.shadow-sm
+                        img.card-img-top(src='assets/img/events/chapter-placeholder.svg', alt='Ground Zero Chapter event artwork')
+                        .card-body
+                            h2.h4 Ground Zero Chapter 4
+                            p.text-muted.mb-3 Featured event with national talent stopping through Rochester.
+                            a.btn.btn-primary(href='https://www.eventbrite.com/e/wild-zero-llc-presents-ground-zero-chapter-4-tickets-989669828097', rel='noopener noreferrer', target='_blank') Tickets on Eventbrite
+                .col-md-6
+                    .card.h-100.shadow-sm
+                        .card-body.d-flex.flex-column
+                            h2.h4 Merch &amp; ticket bundles
+                            p.text-muted
+                                | Grab show tickets, apparel, and limited drops directly from the Ground Zero shop between events.
+                            a.btn.btn-outline-primary.mt-auto(href='https://groundzeroshop.bigcartel.com/', rel='noopener noreferrer', target='_blank') Visit the shop
+
+            .row.justify-content-center.mt-5
+                .col-lg-8.text-center
+                    p.text-muted.small
+                        | Event lineups rotate—follow social channels for on-sale announcements and last-minute additions.
+                    a.btn.btn-primary.btn-xl(href='index.html#events') Back to overview

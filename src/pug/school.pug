@@ -1,0 +1,102 @@
+extends layouts/base
+
+append variables
+    - pageTitle = 'School | Ground Zero Wrestling'
+    - pageDescription = 'Train at Rochester’s premier pro wrestling school with coaches from major promotions worldwide.'
+    - activeNav = 'school'
+
+block content
+    header.gz-page-header
+        .container.px-4.px-lg-5
+            h1.display-5 School
+            p.lead.mb-0 Fully equipped facility, structured classes, and coaches invested in your growth.
+
+    section.page-section
+        .container.px-4.px-lg-5
+            .row.justify-content-center.mb-5
+                .col-lg-10
+                    h2.h3 Why Ground Zero
+                    p.text-muted
+                        | GROUND ZERO is built for new and experienced students who want to become professional wrestlers.
+                        |  Coaches bring experience from major U.S. promotions as well as Europe and Japan, focusing on skills,
+                        |  knowledge, and the ethics you need to grow in and out of the ring.
+                    p.text-muted.mb-0
+                        | Core class covers warm-ups, group calisthenics and ukemi, then instruction in ring psychology,
+                        |  character development, promo and public speaking, tape study, production, refereeing, managing,
+                        |  and networking. Thursday evenings emphasize open ring and gym time so you can drill what you learn.
+
+            .row.gy-5
+                .col-lg-10.mx-auto
+                    h2.h3.mb-4 Coaches
+                    p.text-muted.mb-5 Each coach brings a distinct background—together they round out your toolkit as a performer and athlete.
+
+                .col-12
+                    article#coach-colin.mb-5
+                        .row.align-items-center.gy-3
+                            .col-md-4.col-lg-3
+                                .gz-coach-card
+                                    img(src='assets/img/coaches/colin-delaney.svg', alt='Colin Delaney')
+                            .col-md-8.col-lg-9
+                                h3.h4 Colin Delaney
+                                p.text-muted.mb-0
+                                    | Colin has worked across the northeast’s top independents—Beyond, 2CW, AIW, Chikara, CZW,
+                                    |  Ring of Honor, AEW, and WWE—and has trained wrestlers who have gone on to major promotions.
+
+                    article#coach-mattick.mb-5
+                        .row.align-items-center.gy-3
+                            .col-md-4.col-lg-3
+                                .gz-coach-card
+                                    img(src='assets/img/coaches/mattick.svg', alt='Mattick')
+                            .col-md-8.col-lg-9
+                                h3.h4 Mattick
+                                p.text-muted.mb-0
+                                    | Mattick has trained Rochester students for five years with a focus on fundamentals, work ethic,
+                                    |  and the belief that consistent reps build confident performers.
+
+                    article#coach-nick.mb-5
+                        .row.align-items-center.gy-3
+                            .col-md-4.col-lg-3
+                                .gz-coach-card
+                                    img(src='assets/img/coaches/nick-ando.svg', alt='Nick Ando')
+                            .col-md-8.col-lg-9
+                                h3.h4 Nick Ando
+                                p.text-muted.mb-0
+                                    | Former 2CW heavyweight champion with titles across New York, Nick emphasizes technical detail,
+                                    |  pacing, and the small moments that separate good matches from great ones.
+
+                    article#coach-krist.mb-5
+                        .row.align-items-center.gy-3
+                            .col-md-4.col-lg-3
+                                .gz-coach-card
+                                    img(src='assets/img/coaches/krist-xw.svg', alt='Krist XW')
+                            .col-md-8.col-lg-9
+                                h3.h4 Krist XW
+                                p.text-muted.mb-0
+                                    | Krist trained under Tim Thatcher, Toni Storm, and Gunther while overseas, bringing strict dojo-style
+                                    |  habits plus deep knowledge of production and backstage workflows.
+
+                    article#coach-cloudy.mb-5
+                        .row.align-items-center.gy-3
+                            .col-md-4.col-lg-3
+                                .gz-coach-card
+                                    img(src='assets/img/coaches/cloudy.svg', alt='Cloudy')
+                            .col-md-8.col-lg-9
+                                h3.h4 Cloudy
+                                p.text-muted.mb-0
+                                    | A veteran of CZW, Ring of Honor, Chikara, Dragon Gate USA, IWA-MS, IWS, UWA, 2CW, and more,
+                                    |  Cloudy has shared the ring with international stars and stresses adaptable, hard-hitting storytelling.
+
+                    article#coach-cheech.mb-5
+                        .row.align-items-center.gy-3
+                            .col-md-4.col-lg-3
+                                .gz-coach-card
+                                    img(src='assets/img/coaches/cheech.svg', alt='Cheech')
+                            .col-md-8.col-lg-9
+                                h3.h4 Cheech
+                                p.text-muted.mb-0
+                                    | Cheech supports classes with a focus on in-ring presence, humor as a weapon, and helping students
+                                    |  find authentic characters that connect with crowds.
+
+            .row.justify-content-center.mt-5
+                .col-lg-8.text-center
+                    a.btn.btn-primary.btn-xl(href='index.html#school') Back to overview

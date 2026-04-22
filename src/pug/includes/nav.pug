@@ -1,0 +1,26 @@
+nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top.py-3
+    .container.px-4.px-lg-5
+        a.navbar-brand(href='index.html#page-top') Ground Zero
+        button.navbar-toggler.navbar-toggler-right(
+            type='button',
+            data-bs-toggle='collapse',
+            data-bs-target='#navbarResponsive',
+            aria-controls='navbarResponsive',
+            aria-expanded='false',
+            aria-label='Toggle navigation'
+        )
+            span.navbar-toggler-icon
+        #navbarResponsive.collapse.navbar-collapse
+            ul.navbar-nav.ms-auto.my-2.my-lg-0
+                li.nav-item
+                    a.nav-link(href='index.html#page-top', class=activeNav === 'home' ? 'active' : undefined) Home
+                li.nav-item
+                    a.nav-link(href='events.html', class=activeNav === 'events' ? 'active' : undefined) Events
+                li.nav-item
+                    a.nav-link(href='school.html', class=activeNav === 'school' ? 'active' : undefined) School
+                li.nav-item
+                    a.nav-link(href='results.html', class=activeNav === 'results' ? 'active' : undefined) Results
+                li.nav-item
+                    a.nav-link(href='roster.html', class=activeNav === 'roster' ? 'active' : undefined) Roster
+                li.nav-item
+                    a.nav-link(href='titles.html', class=activeNav === 'titles' ? 'active' : undefined) Title history

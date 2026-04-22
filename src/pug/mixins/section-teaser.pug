@@ -1,0 +1,10 @@
+//- Optional reusable landing section (extend as needed).
+mixin gzSectionTeaser(sectionId, heading, bodyText, ctaHref, ctaLabel, sectionClass)
+    section(id=sectionId, class=`page-section ${sectionClass || ''}`.trim())
+        .container.px-4.px-lg-5
+            .row.justify-content-center
+                .col-lg-10.text-center
+                    h2.mt-0 !{heading}
+                    hr.divider
+                    p.text-muted.mb-4= bodyText
+                    a.btn.btn-primary.btn-xl(href=ctaHref)= ctaLabel

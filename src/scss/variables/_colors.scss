@@ -1,14 +1,26 @@
 // 
-// Colors
+// Colors — Ground Zero (live site palette)
 // 
 
-//- Override and add to color system
-$orange: #f4623a;
-$brown: #5c4d42;
+$gz-red: #ec0000;
+$gz-black: #000000;
+$gz-white: #ffffff;
+$gz-gray-100: #f2f2f2;
+$gz-gray-200: #efefef;
+$gz-gray-300: #dadada;
+$gz-gray-300b: #d5d8db;
+$gz-gray-500: #828282;
+$gz-gray-600: #888f94;
+$gz-gray-900: #252525;
 
-//- Override primary color
-$primary: $orange;
+$orange: $gz-red;
+$brown: $gz-gray-900;
 
-// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
-// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$primary: $gz-red;
+
+$link-color: $gz-red;
+$link-hover-color: darken($gz-red, 6%);
+
 $min-contrast-ratio: 3;
+
+$gz-body-fallback: #fafafa;

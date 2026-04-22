@@ -1,0 +1,16 @@
+block variables
+    - var pageTitle = 'Ground Zero Wrestling'
+    - var pageDescription = 'Professional wrestling training and live events in Rochester, NY.'
+    - var activeNav = 'home'
+
+doctype html
+html(lang='en')
+    head
+        include ../includes/head
+    body#page-top.gz-body-textured
+        include ../includes/nav
+
+        block content
+
+        include ../includes/footer
+        include ../includes/foot-scripts

@@ -1,0 +1,58 @@
+extends layouts/base
+
+append variables
+    - pageTitle = 'Results | Ground Zero Wrestling'
+    - pageDescription = 'Match results and highlights from recent Ground Zero events.'
+    - activeNav = 'results'
+
+block content
+    header.gz-page-header
+        .container.px-4.px-lg-5
+            h1.display-5 Results
+            p.lead.mb-0 Official outcomes from the Ground Zero ring.
+
+    section.page-section
+        .container.px-4.px-lg-5
+            .table-responsive
+                table.table.table-striped.table-bordered.align-middle
+                    thead.table-dark
+                        tr
+                            th(scope='col') Date
+                            th(scope='col') Event
+                            th(scope='col') Match
+                            th(scope='col') Result
+                            th(scope='col') Notes
+                    tbody
+                        tr
+                            td Apr 12, 2026
+                            td Chapter 4
+                            td Singles — Blake vs. Kade
+                            td Jordan Blake def. Chris Kade
+                            td Post-match staredown with Ava Stone
+                        tr
+                            td Mar 8, 2026
+                            td Chapter 3
+                            td Women’s showcase
+                            td Ava Stone def. Riley Cruz
+                            td Stone earns future title shot
+                        tr
+                            td Mar 8, 2026
+                            td Chapter 3
+                            td Tag team tornado
+                            td The Runaways def. Midnight Shift
+                            td Double stomp finish
+                        tr
+                            td Feb 1, 2026
+                            td Chapter 2
+                            td Heavyweight contendership
+                            td Jordan Blake def. Nick Mercer
+                            td Blake advances to title match
+                        tr
+                            td Jan 11, 2026
+                            td Chapter 1
+                            td Triple threat
+                            td Chris Kade def. Sami Reyes and Jax Dyer
+                            td Kade pins Dyer after shooting star press
+
+            .text-center.mt-5
+                a.btn.btn-primary.btn-xl(href='index.html#results') Back to overview
