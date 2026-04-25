@@ -1,6 +1,11 @@
 extends layouts/base
 
 append variables
+    include includes/roster-data
+
+include mixins/roster-card
+
+append variables
     - pageTitle = 'Ground Zero Wrestling | Rochester, NY'
     - pageDescription = 'Premier professional wrestling training, live events, results, roster, and championships in Rochester, NY.'
     - activeNav = 'home'
@@ -17,20 +22,24 @@ block content
                         | Rochester, NY’s home for professional wrestling training and live events. Scroll for highlights
                         |  or use the menu for full pages.
                     .d-flex.flex-column.flex-sm-row.gap-3.justify-content-center
-                        a.btn.btn-primary.btn-xl(href='#events') Events &amp; tickets
+                        a.btn.btn-primary.btn-xl(href='#events') Events &amp; Tickets
                         a.btn.btn-light.btn-xl(href='school.html') Train with us
 
     section#events.page-section
         .container.px-4.px-lg-5
             .row.justify-content-center
                 .col-lg-10.text-center
-                    h2.mt-0 Events &amp; tickets
+                    h2.mt-0 Upcoming Events
                     hr.divider
+                    img.img-fluid.rounded.shadow-sm.mb-4.border.border-3.border-primary(
+                        src='assets/img/events/Chapter9.jpg',
+                        alt='Ground Zero Chapter 10 event poster'
+                    )
                     p.text-muted.mb-4
                         | Upcoming Ground Zero shows, ticket links, and how to catch the action live.
                     p.text-muted.mb-4.small
                         | Shop merch and tickets at the Ground Zero store, plus featured Eventbrite listings when shows go live.
-                    a.btn.btn-primary.btn-xl(href='events.html') Show more
+                    a.btn.btn-primary.btn-xl(href='events.html') Buy Tickets
 
     section#school.page-section.bg-primary
         .container.px-4.px-lg-5
@@ -41,7 +50,7 @@ block content
                     p.text-white-75.mb-4
                         | Fully equipped training facility with coaches who have worked across major promotions. New and experienced
                         |  students build fundamentals, character, and match psychology.
-                    a.btn.btn-light.btn-xl(href='school.html') Show more
+                    a.btn.btn-light.btn-xl(href='school.html') Train With Us
 
     section#results.page-section
         .container.px-4.px-lg-5
@@ -49,25 +58,28 @@ block content
                 .col-lg-10.text-center
                     h2.mt-0 Results
                     hr.divider
-                    p.text-muted.mb-4
-                        | Latest match outcomes from Ground Zero events—winners, stipulations, and quick notes.
+                    p.text-muted.mb-2
+                        | Full results from the most recent show
+                    - const latestResults = siteData.results[0]
+                    if latestResults
+                        p.small.text-muted.mb-4
+                            strong #{latestResults.event}
+                            |  — #{latestResults.date}
                     .table-responsive.text-start.mb-4
                         table.table.table-sm.table-bordered.mb-0
                             thead.table-light
                                 tr
-                                    th(scope='col') Event
                                     th(scope='col') Match
                                     th(scope='col') Result
                             tbody
-                                tr
-                                    td Ground Zero Chapter 4
-                                    td Tag team showcase
-                                    td The Runaways def. Midnight Shift
-                                tr
-                                    td Ground Zero Chapter 3
-                                    td Singles
-                                    td Ava Stone def. Chris Kade
-                    a.btn.btn-primary.btn-xl(href='results.html') Show more
+                                if latestResults
+                                    each m in latestResults.matches.slice(0, 4)
+                                        tr
+                                            td= m.match
+                                            td= m.result
+                    if latestResults && latestResults.matches.length > 4
+                        p.small.text-muted.mb-4 #{latestResults.matches.length - 4} more on the results page.
+                    a.btn.btn-primary.btn-xl(href='results.html') See Full Results
 
     section#roster.page-section.bg-dark.text-white
         .container.px-4.px-lg-5
@@ -75,36 +87,18 @@ block content
                 .col-lg-10.text-center
                     h2.mt-0 Roster
                     hr.divider.divider-light
-                    p.text-white-75.mb-4
-                        | Meet the athletes representing Ground Zero—homegrown talent and visiting competitors.
                     .row.g-3.text-start.mb-4
-                        .col-md-4
-                            .gz-coach-card.text-dark
-                                img(src='assets/img/roster/placeholder.svg', alt='')
-                                .p-3
-                                    h3.h5.mb-1 Ava Stone
-                                    p.small.text-muted.mb-0 “The Quarry” — technical striker.
-                        .col-md-4
-                            .gz-coach-card.text-dark
-                                img(src='assets/img/roster/placeholder.svg', alt='')
-                                .p-3
-                                    h3.h5.mb-1 Chris Kade
-                                    p.small.text-muted.mb-0 High-flyer out of Rochester.
-                        .col-md-4
-                            .gz-coach-card.text-dark
-                                img(src='assets/img/roster/placeholder.svg', alt='')
-                                .p-3
-                                    h3.h5.mb-1 The Runaways
-                                    p.small.text-muted.mb-0 Tag team — chaos and heart.
-                    a.btn.btn-light.btn-xl(href='roster.html') Show more
+                        each person in rosterFeatured
+                            +rosterCard(person, 'teaser')
+                    a.btn.btn-light.btn-xl(href='roster.html') Show Full Roster
 
     section#title-history.page-section
         .container.px-4.px-lg-5
             .row.justify-content-center
                 .col-lg-10.text-center
-                    h2.mt-0 Title history
+                    h2.mt-0 Title History
                     hr.divider
-                    p.text-muted.mb-4 Current champions across Ground Zero championships.
+                    p.text-muted.mb-4 Current Champions
                     .table-responsive.text-start.mb-4
                         table.table.table-sm.table-bordered.mb-0
                             thead.table-light
@@ -113,16 +107,9 @@ block content
                                     th(scope='col') Champion(s)
                                     th(scope='col') Since
                             tbody
-                                tr
-                                    td Ground Zero Heavyweight
-                                    td Jordan Blake
-                                    td March 2026
-                                tr
-                                    td Ground Zero Tag Team
-                                    td The Runaways
-                                    td February 2026
-                                tr
-                                    td Ground Zero Women’s
-                                    td Ava Stone
-                                    td January 2026
-                    a.btn.btn-primary.btn-xl(href='titles.html') Show more
+                                each title in siteData.titles.overview
+                                    tr
+                                        td= title.championship
+                                        td= title.champions
+                                        td= title.since
+                    a.btn.btn-primary.btn-xl(href='titles.html') Show Full History

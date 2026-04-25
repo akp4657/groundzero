@@ -9,50 +9,44 @@ block content
     header.gz-page-header
         .container.px-4.px-lg-5
             h1.display-5 Results
-            p.lead.mb-0 Official outcomes from the Ground Zero ring.
+            p.lead.mb-0 Official outcomes from the latest Ground Zero event
 
     section.page-section
         .container.px-4.px-lg-5
-            .table-responsive
-                table.table.table-striped.table-bordered.align-middle
-                    thead.table-dark
-                        tr
-                            th(scope='col') Date
-                            th(scope='col') Event
-                            th(scope='col') Match
-                            th(scope='col') Result
-                            th(scope='col') Notes
-                    tbody
-                        tr
-                            td Apr 12, 2026
-                            td Chapter 4
-                            td Singles — Blake vs. Kade
-                            td Jordan Blake def. Chris Kade
-                            td Post-match staredown with Ava Stone
-                        tr
-                            td Mar 8, 2026
-                            td Chapter 3
-                            td Women’s showcase
-                            td Ava Stone def. Riley Cruz
-                            td Stone earns future title shot
-                        tr
-                            td Mar 8, 2026
-                            td Chapter 3
-                            td Tag team tornado
-                            td The Runaways def. Midnight Shift
-                            td Double stomp finish
-                        tr
-                            td Feb 1, 2026
-                            td Chapter 2
-                            td Heavyweight contendership
-                            td Jordan Blake def. Nick Mercer
-                            td Blake advances to title match
-                        tr
-                            td Jan 11, 2026
-                            td Chapter 1
-                            td Triple threat
-                            td Chris Kade def. Sami Reyes and Jax Dyer
-                            td Kade pins Dyer after shooting star press
+            - const latestResults = siteData.results[0]
+            if latestResults
+                h2.h3.mb-2 Ground Zero #{latestResults.event}
+                p.text-muted.mb-4 #{latestResults.date} — full card results.
 
-            .text-center.mt-5
-                a.btn.btn-primary.btn-xl(href='index.html#results') Back to overview
+                .table-responsive.mb-5
+                    table.table.table-striped.table-bordered.align-middle
+                        thead.table-dark
+                            tr
+                                th(scope='col') Match
+                                th(scope='col') Result
+                                th(scope='col') Notes
+                        tbody
+                            each m in latestResults.matches
+                                tr
+                                    td= m.match
+                                    td= m.result
+                                    td= m.notes || '—'
+
+            if siteData.results.length > 1
+                h2.h4.mb-3 Previous events
+                each past in siteData.results.slice(1)
+                    h3.h5.mt-4.mb-2 Ground Zero #{past.event}
+                    p.small.text-muted.mb-3 #{past.date}
+                    .table-responsive.mb-4
+                        table.table.table-sm.table-bordered.align-middle
+                            thead.table-light
+                                tr
+                                    th(scope='col') Match
+                                    th(scope='col') Result
+                                    th(scope='col') Notes
+                            tbody
+                                each m in past.matches
+                                    tr
+                                        td= m.match
+                                        td= m.result
+                                        td= m.notes || '—'

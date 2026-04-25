@@ -1,6 +1,11 @@
 extends layouts/base
 
 append variables
+    include includes/roster-data
+
+include mixins/roster-card
+
+append variables
     - pageTitle = 'Roster | Ground Zero Wrestling'
     - pageDescription = 'Athletes, personalities, and teams representing Ground Zero Wrestling.'
     - activeNav = 'roster'
@@ -9,53 +14,10 @@ block content
     header.gz-page-header
         .container.px-4.px-lg-5
             h1.display-5 Roster
-            p.lead.mb-0 Faces of Ground Zero—homegrown heroes and hungry newcomers.
+            p.lead.mb-0 Faces of Ground Zero
 
     section.page-section
         .container.px-4.px-lg-5
             .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
-                .col
-                    .gz-coach-card
-                        img(src='assets/img/roster/placeholder.svg', alt='Jordan Blake')
-                        .p-3
-                            h2.h5 Jordan Blake
-                            p.small.text-muted.mb-2 “The Blueprint” — heavyweight ace with a mean streak.
-                            p.small.mb-0 Finisher: Lariat Driver
-                .col
-                    .gz-coach-card
-                        img(src='assets/img/roster/placeholder.svg', alt='Ava Stone')
-                        .p-3
-                            h2.h5 Ava Stone
-                            p.small.text-muted.mb-2 “The Quarry” — technical striker who controls the pace.
-                            p.small.mb-0 Finisher: Stonecutter suplex
-                .col
-                    .gz-coach-card
-                        img(src='assets/img/roster/placeholder.svg', alt='Chris Kade')
-                        .p-3
-                            h2.h5 Chris Kade
-                            p.small.text-muted.mb-2 High-flyer with fearless dives and quick transitions.
-                            p.small.mb-0 Finisher: Shooting star press
-                .col
-                    .gz-coach-card
-                        img(src='assets/img/roster/placeholder.svg', alt='The Runaways')
-                        .p-3
-                            h2.h5 The Runaways
-                            p.small.text-muted.mb-2 Tag team chaos with heart—two travelers, one fight.
-                            p.small.mb-0 Signature: tandem corner splashes
-                .col
-                    .gz-coach-card
-                        img(src='assets/img/roster/placeholder.svg', alt='Midnight Shift')
-                        .p-3
-                            h2.h5 Midnight Shift
-                            p.small.text-muted.mb-2 Bruisers who bring the fight after the lights go down.
-                            p.small.mb-0 Signature: assisted powerbomb
-                .col
-                    .gz-coach-card
-                        img(src='assets/img/roster/placeholder.svg', alt='Riley Cruz')
-                        .p-3
-                            h2.h5 Riley Cruz
-                            p.small.text-muted.mb-2 Striker with MMA influences and sharp kicks.
-                            p.small.mb-0 Finisher: Rolling elbow
-
-            .text-center.mt-5
-                a.btn.btn-primary.btn-xl(href='index.html#roster') Back to overview
+                each person in rosterPeople
+                    +rosterCard(person, 'full')

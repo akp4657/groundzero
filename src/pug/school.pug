@@ -9,94 +9,116 @@ block content
     header.gz-page-header
         .container.px-4.px-lg-5
             h1.display-5 School
-            p.lead.mb-0 Fully equipped facility, structured classes, and coaches invested in your growth.
+            p.lead.mb-0 Fully equipped facility, structured classes, and coaches invested in your growth
 
     section.page-section
         .container.px-4.px-lg-5
             .row.justify-content-center.mb-5
                 .col-lg-10
-                    h2.h3 Why Ground Zero
-                    p.text-muted
-                        | GROUND ZERO is built for new and experienced students who want to become professional wrestlers.
-                        |  Coaches bring experience from major U.S. promotions as well as Europe and Japan, focusing on skills,
-                        |  knowledge, and the ethics you need to grow in and out of the ring.
-                    p.text-muted.mb-0
-                        | Core class covers warm-ups, group calisthenics and ukemi, then instruction in ring psychology,
-                        |  character development, promo and public speaking, tape study, production, refereeing, managing,
-                        |  and networking. Thursday evenings emphasize open ring and gym time so you can drill what you learn.
+                    .gz-school-text-panel
+                        h2.h3 Respect the Craft
+                        p.text-muted.mb-3
+                            | Ground Zero is built for new and experienced students who want to become professional wrestlers.
+                            |  Coaches bring experience from major U.S. promotions as well as Europe and Japan, focusing on skills,
+                            |  knowledge, and the ethics you need to grow in and out of the ring.
+                        p.text-muted.mb-0
+                            | Core class covers warm-ups, group calisthenics and ukemi, then instruction in ring psychology,
+                            |  character development, promo and public speaking, tape study, production, refereeing, managing,
+                            |  and networking. Thursday evenings emphasize open ring and gym time so you can drill what you learn.
+
+            .row.justify-content-center.mb-5
+                .col-lg-10
+                    .gz-school-text-panel.p-0.overflow-hidden
+                        img.w-100(src='assets/img/coaches/GZ_School.jpg', alt='Ground Zero School training promotion')
 
             .row.gy-5
                 .col-lg-10.mx-auto
-                    h2.h3.mb-4 Coaches
-                    p.text-muted.mb-5 Each coach brings a distinct background—together they round out your toolkit as a performer and athlete.
+                    .gz-school-text-panel.mb-4.mb-lg-5
+                        h2.h3.mb-3 Coaches
+                        p.text-muted.mb-0
+                            | Each coach brings a distinct background—together they round out your toolkit as a performer and athlete.
 
                 .col-12
-                    article#coach-colin.mb-5
-                        .row.align-items-center.gy-3
+                    article#coach-colin.mb-5(aria-labelledby='coach-colin-heading')
+                        .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card
-                                    img(src='assets/img/coaches/colin-delaney.svg', alt='Colin Delaney')
-                            .col-md-8.col-lg-9
-                                h3.h4 Colin Delaney
-                                p.text-muted.mb-0
-                                    | Colin has worked across the northeast’s top independents—Beyond, 2CW, AIW, Chikara, CZW,
-                                    |  Ring of Honor, AEW, and WWE—and has trained wrestlers who have gone on to major promotions.
+                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                    .gz-roster-media
+                                        img(src='assets/img/coaches/Colin_Delaney.jpg', alt='', aria-hidden='true')
+                                    .p-3
+                                        h3#coach-colin-heading.h5.mb-0 Colin Delaney
+                            .col-md-8.col-lg-9.d-flex.align-items-stretch
+                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
+                                    p.text-muted.mb-0.flex-grow-1
+                                        | Colin has worked across the northeast’s top independents—Beyond, 2CW, AIW, Chikara, CZW,
+                                        |  Ring of Honor, AEW, and WWE—and has trained wrestlers who have gone on to major promotions.
 
-                    article#coach-mattick.mb-5
-                        .row.align-items-center.gy-3
+                    article#coach-mattick.mb-5(aria-labelledby='coach-mattick-heading')
+                        .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card
-                                    img(src='assets/img/coaches/mattick.svg', alt='Mattick')
-                            .col-md-8.col-lg-9
-                                h3.h4 Mattick
-                                p.text-muted.mb-0
-                                    | Mattick has trained Rochester students for five years with a focus on fundamentals, work ethic,
-                                    |  and the belief that consistent reps build confident performers.
+                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                    .gz-roster-media
+                                        img(src='assets/img/coaches/Mattick.png', alt='', aria-hidden='true')
+                                    .p-3
+                                        h3#coach-mattick-heading.h5.mb-0 Mattick
+                            .col-md-8.col-lg-9.d-flex.align-items-stretch
+                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
+                                    p.text-muted.mb-0.flex-grow-1
+                                        | Mattick has trained Rochester students for five years with a focus on fundamentals, work ethic,
+                                        |  and the belief that consistent reps build confident performers.
 
-                    article#coach-nick.mb-5
-                        .row.align-items-center.gy-3
+                    article#coach-nick.mb-5(aria-labelledby='coach-nick-heading')
+                        .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card
-                                    img(src='assets/img/coaches/nick-ando.svg', alt='Nick Ando')
-                            .col-md-8.col-lg-9
-                                h3.h4 Nick Ando
-                                p.text-muted.mb-0
-                                    | Former 2CW heavyweight champion with titles across New York, Nick emphasizes technical detail,
-                                    |  pacing, and the small moments that separate good matches from great ones.
+                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                    .gz-roster-media
+                                        img(src='assets/img/coaches/nickando.png', alt='', aria-hidden='true')
+                                    .p-3
+                                        h3#coach-nick-heading.h5.mb-0 Nick Ando
+                            .col-md-8.col-lg-9.d-flex.align-items-stretch
+                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
+                                    p.text-muted.mb-0.flex-grow-1
+                                        | Former 2CW heavyweight champion with titles across New York, Nick emphasizes technical detail,
+                                        |  pacing, and the small moments that separate good matches from great ones.
 
-                    article#coach-krist.mb-5
-                        .row.align-items-center.gy-3
+                    article#coach-krist.mb-5(aria-labelledby='coach-krist-heading')
+                        .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card
-                                    img(src='assets/img/coaches/krist-xw.svg', alt='Krist XW')
-                            .col-md-8.col-lg-9
-                                h3.h4 Krist XW
-                                p.text-muted.mb-0
-                                    | Krist trained under Tim Thatcher, Toni Storm, and Gunther while overseas, bringing strict dojo-style
-                                    |  habits plus deep knowledge of production and backstage workflows.
+                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                    .gz-roster-media
+                                        img(src='assets/img/coaches/kristworthless.png', alt='', aria-hidden='true')
+                                    .p-3
+                                        h3#coach-krist-heading.h5.mb-0 Krist XW
+                            .col-md-8.col-lg-9.d-flex.align-items-stretch
+                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
+                                    p.text-muted.mb-0.flex-grow-1
+                                        | Krist trained under Tim Thatcher, Toni Storm, and Gunther while overseas, bringing strict dojo-style
+                                        |  habits plus deep knowledge of production and backstage workflows.
 
-                    article#coach-cloudy.mb-5
-                        .row.align-items-center.gy-3
+                    article#coach-cloudy.mb-5(aria-labelledby='coach-cloudy-heading')
+                        .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card
-                                    img(src='assets/img/coaches/cloudy.svg', alt='Cloudy')
-                            .col-md-8.col-lg-9
-                                h3.h4 Cloudy
-                                p.text-muted.mb-0
-                                    | A veteran of CZW, Ring of Honor, Chikara, Dragon Gate USA, IWA-MS, IWS, UWA, 2CW, and more,
-                                    |  Cloudy has shared the ring with international stars and stresses adaptable, hard-hitting storytelling.
+                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                    .gz-roster-media
+                                        img(src='assets/img/coaches/cloudy.png', alt='', aria-hidden='true')
+                                    .p-3
+                                        h3#coach-cloudy-heading.h5.mb-0 Cloudy
+                            .col-md-8.col-lg-9.d-flex.align-items-stretch
+                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
+                                    p.text-muted.mb-0.flex-grow-1
+                                        | A veteran of CZW, Ring of Honor, Chikara, Dragon Gate USA, IWA-MS, IWS, UWA, 2CW, and more,
+                                        |  Cloudy has shared the ring with international stars and stresses adaptable, hard-hitting storytelling.
 
-                    article#coach-cheech.mb-5
-                        .row.align-items-center.gy-3
+                    article#coach-cheech.mb-5(aria-labelledby='coach-cheech-heading')
+                        .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card
-                                    img(src='assets/img/coaches/cheech.svg', alt='Cheech')
-                            .col-md-8.col-lg-9
-                                h3.h4 Cheech
-                                p.text-muted.mb-0
-                                    | Cheech supports classes with a focus on in-ring presence, humor as a weapon, and helping students
-                                    |  find authentic characters that connect with crowds.
-
-            .row.justify-content-center.mt-5
-                .col-lg-8.text-center
-                    a.btn.btn-primary.btn-xl(href='index.html#school') Back to overview
+                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                    .gz-roster-media
+                                        img(src='assets/img/coaches/cheech.png', alt='', aria-hidden='true')
+                                    .p-3
+                                        h3#coach-cheech-heading.h5.mb-0 Cheech
+                            .col-md-8.col-lg-9.d-flex.align-items-stretch
+                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
+                                    p.text-muted.mb-0.flex-grow-1
+                                        | Cheech supports classes with a focus on in-ring presence, humor as a weapon, and helping students
+                                        |  find authentic characters that connect with crowds.

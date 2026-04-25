@@ -1,0 +1,30 @@
+//- variant: 'full' (roster page) | 'teaser' (home section)
+mixin rosterCard(person, variant)
+    -
+        const imageStyle = []
+        if (person.focalPosition) imageStyle.push(`object-position: ${person.focalPosition};`)
+        const imageTransforms = []
+        if (person.focalShift) imageTransforms.push(`translateY(${person.focalShift})`)
+        if (person.focalScale) imageTransforms.push(`scale(${person.focalScale})`)
+        if (imageTransforms.length) imageStyle.push(`transform: ${imageTransforms.join(' ')};`)
+
+    if variant === 'teaser'
+        .col-md-4
+            .gz-coach-card.gz-roster-card.text-dark
+                .gz-roster-media
+                    img(src=person.image, alt=person.name, style=imageStyle.length ? imageStyle.join(' ') : undefined)
+                .p-3
+                    h3.h5.mb-1= person.name
+                    if person.tagline
+                        p.small.text-muted.mb-0= person.tagline
+    else
+        .col
+            .gz-coach-card.gz-roster-card
+                .gz-roster-media
+                    img(src=person.image, alt=person.name, style=imageStyle.length ? imageStyle.join(' ') : undefined)
+                .p-3
+                    h2.h5= person.name
+                    if person.tagline
+                        p.small.text-muted.mb-2= person.tagline
+                    if person.detail
+                        p.small.mb-0= person.detail

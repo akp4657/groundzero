@@ -8,92 +8,29 @@ append variables
 block content
     header.gz-page-header
         .container.px-4.px-lg-5
-            h1.display-5 Title history
-            p.lead.mb-0 Every reign, defense, and vacancy for Ground Zero gold.
+            h1.display-5 Title History
+            p.lead.mb-0 Full title lineage for Ground Zero
 
     section.page-section
         .container.px-4.px-lg-5
-            h2.h4 Ground Zero Heavyweight Championship
-            .table-responsive.mb-5
-                table.table.table-sm.table-bordered
-                    thead.table-light
-                        tr
-                            th(scope='col') #
-                            th(scope='col') Champion
-                            th(scope='col') Won
-                            th(scope='col') Lost
-                            th(scope='col') Defenses
-                    tbody
-                        tr
-                            td 3
-                            td Jordan Blake
-                            td Mar 8, 2026
-                            td Present
-                            td 1
-                        tr
-                            td 2
-                            td Nick Mercer
-                            td Nov 21, 2025
-                            td Mar 8, 2026
-                            td 2
-                        tr
-                            td 1
-                            td Chris Kade
-                            td Jul 4, 2025
-                            td Nov 21, 2025
-                            td 4
-
-            h2.h4 Ground Zero Women’s Championship
-            .table-responsive.mb-5
-                table.table.table-sm.table-bordered
-                    thead.table-light
-                        tr
-                            th(scope='col') #
-                            th(scope='col') Champion
-                            th(scope='col') Won
-                            th(scope='col') Lost
-                            th(scope='col') Defenses
-                    tbody
-                        tr
-                            td 2
-                            td Ava Stone
-                            td Jan 11, 2026
-                            td Present
-                            td 3
-                        tr
-                            td 1
-                            td Riley Cruz
-                            td Aug 16, 2025
-                            td Jan 11, 2026
-                            td 2
-
-            h2.h4 Ground Zero Tag Team Championship
-            .table-responsive.mb-5
-                table.table.table-sm.table-bordered
-                    thead.table-light
-                        tr
-                            th(scope='col') #
-                            th(scope='col') Champions
-                            th(scope='col') Won
-                            th(scope='col') Lost
-                            th(scope='col') Defenses
-                    tbody
-                        tr
-                            td 2
-                            td The Runaways
-                            td Feb 1, 2026
-                            td Present
-                            td 2
-                        tr
-                            td 1
-                            td Midnight Shift
-                            td Sep 20, 2025
-                            td Feb 1, 2026
-                            td 3
-
-            .alert.alert-secondary
-                strong Current champions quick reference:
-                |  Jordan Blake (Heavyweight), Ava Stone (Women’s), The Runaways (Tag Team).
-
-            .text-center.mt-4
-                a.btn.btn-primary.btn-xl(href='index.html#title-history') Back to overview
+            each championship in siteData.titles.lineage
+                h2.h4= championship.title
+                .table-responsive.mb-5
+                    table.table.table-sm.table-bordered
+                        thead.table-light
+                            tr
+                                th(scope='col') #
+                                th(scope='col')= championship.holdersLabel
+                                th(scope='col') Won
+                                th(scope='col') Lost
+                                th(scope='col') Days
+                        tbody
+                            each reign in championship.reigns
+                                - const reignDays = getReignDays(reign.won, reign.lost)
+                                - const isCurrentReign = String(reign.lost || '').toLowerCase() === 'present'
+                                tr
+                                    td= reign.number
+                                    td= reign.holders
+                                    td= reign.won
+                                    td= reign.lost
+                                    td= reignDays === '—' ? reignDays : `${reignDays}${isCurrentReign ? '+' : ''}`

@@ -1,0 +1,102 @@
+{
+  "results": [
+    {
+      "date": "Mar 8, 2026",
+      "event": "Ground Zero - Chapter 9",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Cheech defeats CJ Settles",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "First Shot (Breanynn I & Cal Keaton) defeat Yung Boiz (Billy Rivers & Josh)",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Price Purgold defeats Pastor C-Lo",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Tag Team Title Match",
+          "result": "Primetime (Carmelo Lee & Sa1nt) defeat St★rburst (Keenan Moore & Kenny St★r) (c)",
+          "notes": "TITLE CHANGE"
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Fallout Theory (Dakoda Orion & Ryze) defeat High Seas (Cloudy & Nick Ando)",
+          "notes": ""
+        },
+        {
+          "match": "Six Way Match",
+          "result": "Mattick defeats Colt Allen, Danny Atom, El Magnifico, Max St. Giovanni, and Scott Richards",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Hellbrid defeats Ava Everett",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "Chael Connors (c) defeats LSG",
+          "notes": ""
+        }
+      ]
+    }
+  ],
+  "titles": {
+    "overview": [
+      {
+        "championship": "Ground Zero",
+        "champions": "Chael Connors",
+        "since": "November 16, 2025"
+      },
+      {
+        "championship": "Ground Zero Tag Team",
+        "champions": "Primetime",
+        "since": "March 8, 2026"
+      }
+    ],
+    "lineage": [
+      {
+        "title": "Ground Zero Championship",
+        "holdersLabel": "Champion",
+        "reigns": [
+          {
+            "number": 2,
+            "holders": "Chael Connors",
+            "won": "Nov 16, 2025",
+            "lost": "Present"
+          },
+          {
+            "number": 1,
+            "holders": "CJ Settles",
+            "won": "Feb 16, 2025",
+            "lost": "Nov 16, 2025"
+          }
+        ]
+      },
+      {
+        "title": "Ground Zero Tag Team Championship",
+        "holdersLabel": "Champions",
+        "reigns": [
+          {
+            "number": 2,
+            "holders": "Primetime",
+            "won": "Mar 8, 2026",
+            "lost": "Present"
+          },
+          {
+            "number": 1,
+            "holders": "St★rburst",
+            "won": "Sep 13, 2025",
+            "lost": "Mar 8, 2026"
+          }
+        ]
+      }
+    ]
+  }
+}
