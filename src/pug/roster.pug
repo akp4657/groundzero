@@ -18,6 +18,19 @@ block content
 
     section.page-section
         .container.px-4.px-lg-5
-            .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
-                each person in rosterPeople
+            h2.h3.mb-4 Wrestlers
+            .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4.mb-5
+                each person in rosterWrestlers
                     +rosterCard(person, 'full')
+
+            if rosterStaff.length
+                h2.h3.mb-4 Staff
+                .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4.mb-5
+                    each person in rosterStaff
+                        +rosterCard(person, 'full')
+
+            if rosterReferees.length
+                h2.h3.mb-4 Referees
+                .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+                    each person in rosterReferees
+                        +rosterCard(person, 'full')

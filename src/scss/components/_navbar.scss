@@ -27,7 +27,7 @@
                 color: fade-out($white, 0.2);
                 font-family: $font-family-sans-serif;
                 font-weight: $font-weight-bold;
-                font-size: 0.9rem;
+                font-size: 1.05rem;
                 padding: 0.75rem 0;
 
                 &:hover,
@@ -68,6 +68,7 @@
             .nav-item {
                 .nav-link {
                     color: fade-out($white, 0.3);
+                    font-size: 1.15rem;
                     padding: 0 1rem;
 
                     &:hover {
@@ -89,7 +90,7 @@
             background-color: $white;
 
             .navbar-brand {
-                color: $gray-900;
+                color: darken($white, 12%);
 
                 &:hover {
                     color: $primary;
@@ -104,7 +105,8 @@
             .navbar-nav {
                 .nav-item {
                     .nav-link {
-                        color: $gray-900;
+                        color: darken($white, 14%);
+                        font-size: 1.15rem;
 
                         &:hover {
                             color: $primary;

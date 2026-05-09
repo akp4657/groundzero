@@ -1,4 +1,13 @@
-// Events page — ticket / shop cards
+// Events page — upcoming list + ticket / shop cards
+.gz-events-upcoming-list {
+    background: $white;
+    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.06);
+
+    .list-group-item {
+        border-color: fade-out($primary, 0.82);
+    }
+}
+
 // Equal card height (row + h-100) + flex spacer aligns `.card-body` tops even when image heights differ.
 .gz-event-card {
     border: 2px solid $primary;

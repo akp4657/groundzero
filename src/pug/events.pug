@@ -13,16 +13,51 @@ block content
 
     section.page-section
         .container.px-4.px-lg-5
+            if siteData.upcomingEvents && siteData.upcomingEvents.length
+                .row.justify-content-center.mb-4.mb-lg-5
+                    .col-lg-10
+                        h2.h3.mb-3 Next events
+                        ul.list-group.list-group-flush.gz-events-upcoming-list.border.rounded.overflow-hidden
+                            each ev in siteData.upcomingEvents.slice(0, 3)
+                                li.list-group-item.px-3.py-3.d-flex.flex-column.flex-md-row.align-items-md-center.gap-2
+                                    .flex-grow-1
+                                        strong.d-block= ev.title
+                                        span.text-muted.small #{ev.date}
+                                        if ev.venue
+                                            span.text-muted.small  — #{ev.venue}
+                                    if ev.ticketUrl
+                                        a.btn.btn-sm.btn-primary.align-self-md-end.flex-shrink-0(href=ev.ticketUrl, rel='noopener noreferrer', target='_blank') Tickets
+                                    else
+                                        span.small.text-muted.align-self-md-end.flex-shrink-0 On sale TBA
+
             .row.g-4.g-lg-5#gz-events-cards
-                .col-md-6.d-flex
-                    .card.gz-event-card.h-100.w-100
-                        .gz-event-card__media.gz-event-card__media--poster
-                            img(src='assets/img/events/Chapter9.jpg', alt='Ground Zero Chapter 10 event poster')
-                        .gz-event-card__body-push.flex-grow-1
-                        .card-body.d-flex.flex-column.pt-4
-                            h2.h4.gz-event-card__title.mb-0 Ground Zero - Chapter 10
-                            p.text-muted.gz-event-card__lede.mb-0 May 17th, 2026 at Aerial Arts of Rochester
-                            a.btn.btn-primary.mt-auto(href='https://groundzeroshop.bigcartel.com/category/tickets', rel='noopener noreferrer', target='_blank') Buy Tickets
+                - const featuredEvent = siteData.upcomingEvents && siteData.upcomingEvents[0]
+                if featuredEvent
+                    .col-md-6.d-flex
+                        .card.gz-event-card.h-100.w-100
+                            .gz-event-card__media.gz-event-card__media--poster
+                                img(
+                                    src=featuredEvent.poster || 'assets/img/events/Chapter9.jpg',
+                                    alt=`${featuredEvent.title} event poster`
+                                )
+                            .gz-event-card__body-push.flex-grow-1
+                            .card-body.d-flex.flex-column.pt-4
+                                h2.h4.gz-event-card__title.mb-0= featuredEvent.title
+                                p.text-muted.gz-event-card__lede.mb-0
+                                    | #{featuredEvent.date}#{featuredEvent.venue ? ' at ' + featuredEvent.venue : ''}
+                                if featuredEvent.ticketUrl
+                                    a.btn.btn-primary.mt-auto(href=featuredEvent.ticketUrl, rel='noopener noreferrer', target='_blank') Buy Tickets
+                                else
+                                    p.small.text-muted.mt-auto.mb-0 Tickets announced soon.
+                else
+                    .col-md-6.d-flex
+                        .card.gz-event-card.h-100.w-100
+                            .gz-event-card__media.gz-event-card__media--poster
+                                img(src='assets/img/events/Chapter9.jpg', alt='Ground Zero event poster')
+                            .gz-event-card__body-push.flex-grow-1
+                            .card-body.d-flex.flex-column.pt-4
+                                h2.h4.gz-event-card__title.mb-0 Ground Zero
+                                p.text-muted.gz-event-card__lede.mb-0 Check socials for the next show date.
                 .col-md-6.d-flex
                     .card.gz-event-card.h-100.w-100
                         .gz-event-card__media.gz-event-card__media--contain

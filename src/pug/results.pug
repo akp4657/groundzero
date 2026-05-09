@@ -9,16 +9,16 @@ block content
     header.gz-page-header
         .container.px-4.px-lg-5
             h1.display-5 Results
-            p.lead.mb-0 Official outcomes from the latest Ground Zero event
+            p.lead.mb-0 Official outcomes from the last two Ground Zero events
 
     section.page-section
         .container.px-4.px-lg-5
-            - const latestResults = siteData.results[0]
-            if latestResults
-                h2.h3.mb-2 Ground Zero #{latestResults.event}
-                p.text-muted.mb-4 #{latestResults.date} — full card results.
+            - const recentResults = (siteData.results || []).slice(0, 2)
+            each show, idx in recentResults
+                h2.h3.mb-2(class=idx > 0 ? 'mt-5 pt-2' : '') Ground Zero #{show.event}
+                p.text-muted.mb-4 #{show.date} — full card results.
 
-                .table-responsive.mb-5
+                .table-responsive(class=idx === recentResults.length - 1 ? 'mb-0' : 'mb-5')
                     table.table.table-striped.table-bordered.align-middle
                         thead.table-dark
                             tr
@@ -26,27 +26,11 @@ block content
                                 th(scope='col') Result
                                 th(scope='col') Notes
                         tbody
-                            each m in latestResults.matches
+                            each m in show.matches
                                 tr
                                     td= m.match
                                     td= m.result
                                     td= m.notes || '—'
 
-            if siteData.results.length > 1
-                h2.h4.mb-3 Previous events
-                each past in siteData.results.slice(1)
-                    h3.h5.mt-4.mb-2 Ground Zero #{past.event}
-                    p.small.text-muted.mb-3 #{past.date}
-                    .table-responsive.mb-4
-                        table.table.table-sm.table-bordered.align-middle
-                            thead.table-light
-                                tr
-                                    th(scope='col') Match
-                                    th(scope='col') Result
-                                    th(scope='col') Notes
-                            tbody
-                                each m in past.matches
-                                    tr
-                                        td= m.match
-                                        td= m.result
-                                        td= m.notes || '—'
+            if !recentResults.length
+                p.text-muted.mb-0 No results published yet.

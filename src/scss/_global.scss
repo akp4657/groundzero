@@ -62,6 +62,13 @@ body {
     }
 }
 
+.gz-respect-the-craft-logo {
+    display: inline-block;
+    max-width: min(26rem, 88vw);
+    height: auto;
+    margin-top: -5rem;
+}
+
 .gz-coach-card {
     border: 1px solid $gz-gray-300b;
     border-radius: 0.5rem;
@@ -81,7 +88,8 @@ body {
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center top;
+    transform-origin: center top;
 }
 
 .gz-roster-card {
@@ -146,6 +154,60 @@ body {
 
 article[id^='coach-'] .coach-bio.gz-school-text-panel {
     min-height: 100%;
+}
+
+// School: coach portrait framing (per person)
+#coach-colin .gz-roster-media img {
+    transform: scale(2.35);
+    transform-origin: center 1%;
+}
+
+#coach-nick .gz-roster-media img {
+    transform: scale(1.1);
+    transform-origin: center 1%;
+}
+
+#coach-krist .gz-roster-media img {
+    transform: scale(1.15);
+    transform-origin: center 1%;
+}
+
+#coach-cheech .gz-roster-media img {
+    transform: scale(1.15);
+    transform-origin: center 1%;
+}
+
+article[id^='coach-'] .gz-roster-media {
+    position: relative;
+    background: radial-gradient(
+        ellipse 95% 92% at 50% 34%,
+        #fafbfc 0%,
+        #f0f1f4 18%,
+        #e2e4ea 42%,
+        #cdd1db 70%,
+        #b6bcc7 100%
+    );
+
+    img {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// Bottom fade: Colin’s JPG already has this baked in — only other coaches get a light CSS band so it matches (~10–15% height, not tall/dark)
+article[id^='coach-']:not(#coach-colin) .gz-roster-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        rgba(28, 30, 36, 0.24) 0%,
+        rgba(28, 30, 36, 0.11) 5%,
+        rgba(28, 30, 36, 0.03) 9%,
+        rgba(28, 30, 36, 0) 14%
+    );
 }
 
 // Custom utilities for this theme

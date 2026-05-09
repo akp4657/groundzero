@@ -1,4 +1,69 @@
 {
+  "upcomingEvents": [
+    {
+      "title": "Ground Zero - Chapter 10",
+      "date": "May 17, 2026",
+      "venue": "Aerial Arts of Rochester",
+      "ticketUrl": "https://groundzeroshop.bigcartel.com/category/tickets",
+      "poster": "assets/img/events/Chapter9.jpg"
+    },
+    {
+      "title": "Wild Zero: Cunning but Brutal",
+      "date": "May 28, 2026",
+      "venue": "LUX",
+      "ticketUrl": "",
+      "poster": ""
+    },
+    {
+      "title": "Ground Zero - Chapter 11",
+      "date": "(Date TBA)",
+      "venue": "Rochester, NY",
+      "ticketUrl": "",
+      "poster": ""
+    }
+  ],
+  "seminarGuests": [
+    {
+      "name": "Bill Collier",
+      "image": "assets/img/roster/placeholder.svg",
+      "date": "2025",
+      "note": "",
+      "slides": [
+        {
+          "image": "assets/img/roster/placeholder.svg",
+          "caption": "Seminar photo"
+        },
+        {
+          "image": "assets/img/roster/placeholder.svg",
+          "caption": "Training photo"
+        }
+      ]
+    },
+    {
+      "name": "Chris Hero",
+      "image": "assets/img/roster/placeholder.svg",
+      "date": "2025",
+      "note": ""
+    },
+    {
+      "name": "Mike Santana",
+      "image": "assets/img/roster/placeholder.svg",
+      "date": "2025",
+      "note": ""
+    },
+    {
+      "name": "Jonathan Gresham",
+      "image": "assets/img/roster/placeholder.svg",
+      "date": "2025",
+      "note": ""
+    },
+    {
+      "name": "Lince Dorado",
+      "image": "assets/img/roster/placeholder.svg",
+      "date": "2024",
+      "note": ""
+    }
+  ],
   "results": [
     {
       "date": "Mar 8, 2026",
@@ -43,6 +108,47 @@
           "match": "Ground Zero Title Match",
           "result": "Chael Connors (c) defeats LSG",
           "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Nov 16, 2025",
+      "event": "Ground Zero - Chapter 8",
+      "matches": [
+        {
+          "match": "2025 Ground Zero Summit Tournament Finals",
+          "result": "Price Purgold defeats Jeremiah Richter",
+          "notes": "Wins the tournament. Sponsored by @hiddenangels_homehealth"
+        },
+        {
+          "match": "Multi-Competitor Match",
+          "result": "Cheech defeats Darren Crowe, Hellbrid, Adam Wacker, Scott Richards, and Jack Isaac",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Tag Team Title Match (2 out of 3 falls)",
+          "result": "St★rburst (Keenan Moore & Kenny St★r) (c) defeat High Seas (Cloudy & Nick Ando)",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team #1 Contenders Match",
+          "result": "Primetime (Carmelo Lee & Sa1nt) defeat xEdgeOfHopex, First Shot, and Fallout Theory",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Julio Diamanté defeats Jay Freddie",
+          "notes": "Sponsored by @scentsbydesigncandlebar"
+        },
+        {
+          "match": "Singles Match",
+          "result": "Dick Justice defeats Krist Worthless",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "Chael Connors defeats CJ Settles (c)",
+          "notes": "TITLE CHANGE"
         }
       ]
     }

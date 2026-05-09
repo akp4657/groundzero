@@ -13,18 +13,22 @@ block content
 
     section.page-section
         .container.px-4.px-lg-5
+            .text-center.mb-4.mb-md-5
+                img.gz-respect-the-craft-logo(
+                    src='assets/img/brand/respect-the-craft.png',
+                    alt='Respect the Craft'
+                )
             .row.justify-content-center.mb-5
                 .col-lg-10
                     .gz-school-text-panel
-                        h2.h3 Respect the Craft
+                        h2.h3 Welcome to GROUND ZERO
                         p.text-muted.mb-3
-                            | Ground Zero is built for new and experienced students who want to become professional wrestlers.
-                            |  Coaches bring experience from major U.S. promotions as well as Europe and Japan, focusing on skills,
-                            |  knowledge, and the ethics you need to grow in and out of the ring.
+                            | A fully equppied training facility dedicated to helping new and experienced students train to become professional wrestlers.
+                            | At GROUND ZERO, you will learn from a team of coaches with experience in nearly every notable wrestling promotion in the country as 
+                            | well as promotions in Europe and Japan, giving you the skills, knowledge, and ethics you need to build yourself into the best professional wrestler you can be.
                         p.text-muted.mb-0
-                            | Core class covers warm-ups, group calisthenics and ukemi, then instruction in ring psychology,
-                            |  character development, promo and public speaking, tape study, production, refereeing, managing,
-                            |  and networking. Thursday evenings emphasize open ring and gym time so you can drill what you learn.
+                            | At GROUND ZERO, wrestling comes first. Respect the Craft. There is no room for ego in this gym. Here, you will learn the art of professional wrestling
+                            | and the importance of tradition while embracing the ever-expanding culture of the sport.
 
             .row.justify-content-center.mb-5
                 .col-lg-10
@@ -32,11 +36,6 @@ block content
                         img.w-100(src='assets/img/coaches/GZ_School.jpg', alt='Ground Zero School training promotion')
 
             .row.gy-5
-                .col-lg-10.mx-auto
-                    .gz-school-text-panel.mb-4.mb-lg-5
-                        h2.h3.mb-3 Coaches
-                        p.text-muted.mb-0
-                            | Each coach brings a distinct background—together they round out your toolkit as a performer and athlete.
 
                 .col-12
                     article#coach-colin.mb-5(aria-labelledby='coach-colin-heading')
@@ -50,8 +49,9 @@ block content
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
                                 .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
                                     p.text-muted.mb-0.flex-grow-1
-                                        | Colin has worked across the northeast’s top independents—Beyond, 2CW, AIW, Chikara, CZW,
-                                        |  Ring of Honor, AEW, and WWE—and has trained wrestlers who have gone on to major promotions.
+                                        | Best known for wrestling for WWE. He has also wrestled for promotions such as 2CW Squared Circle Wrestling, Chikara, NWA Upstate, Pier 6 Wrestling, 
+                                        | Buffalo Championship Wrestling, NWA Empire, LakeShore Wrestling, UWA Hardcore Wrestling, Roc City Wrestling, and CZW. Colin brings a wealth of
+                                        | experience and knowledge to the school. Helping students learn what it truly takes to make it to the highest levels of the sport.
 
                     article#coach-mattick.mb-5(aria-labelledby='coach-mattick-heading')
                         .row.align-items-stretch.gy-3
@@ -122,3 +122,70 @@ block content
                                     p.text-muted.mb-0.flex-grow-1
                                         | Cheech supports classes with a focus on in-ring presence, humor as a weapon, and helping students
                                         |  find authentic characters that connect with crowds.
+
+                    #seminars-at-ground-zero.mt-5.pt-4(aria-labelledby='seminars-heading')
+                        .gz-school-text-panel.mb-4
+                            h2#seminars-heading.h3.mb-3 Seminars
+                            p.text-muted.mb-0
+                                | Guest coaches and special-topic seminars expand what you see in weekly class. The grid below pulls from
+                                |  site data—replace names, photos, years, and notes with your real seminar archive.
+
+                        if siteData.seminarGuests && siteData.seminarGuests.length
+                            .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
+                                each guest, guestIdx in siteData.seminarGuests
+                                    -
+                                        const seminarImg = guest.image || 'assets/img/roster/placeholder.svg'
+                                        const seminarTag = guest.date || ''
+                                        const seminarDetail = guest.note || ''
+                                    .col.h-100
+                                        button.gz-seminar-card-trigger(
+                                            type='button',
+                                            data-seminar-index=guestIdx,
+                                            aria-haspopup='dialog',
+                                            aria-controls='gzSeminarModal',
+                                            aria-label=`Open seminar photos: ${guest.name}`
+                                        )
+                                            span.gz-seminar-card-trigger-inner.d-block
+                                                .gz-coach-card.gz-roster-card.text-start.h-100
+                                                    .gz-roster-media
+                                                        img(src=seminarImg, alt='', decoding='async')
+                                                    .p-3
+                                                        h2.h5= guest.name
+                                                        if seminarTag
+                                                            p.small.text-muted.mb-2= seminarTag
+                                                        if seminarDetail
+                                                            p.small.mb-0= seminarDetail
+
+                            #gzSeminarModal.modal.fade(
+                                tabindex='-1',
+                                aria-labelledby='gzSeminarModalLabel',
+                                aria-hidden='true'
+                            )
+                                .modal-dialog.modal-lg.modal-dialog-centered.modal-dialog-scrollable
+                                    .modal-content
+                                        .modal-header
+                                            h2#gzSeminarModalLabel.modal-title.h5
+                                            button.btn-close(
+                                                type='button',
+                                                data-bs-dismiss='modal',
+                                                aria-label='Close'
+                                            )
+                                        .modal-body.p-0
+                                            #gzSeminarCarousel.carousel.slide(data-bs-ride='false')
+                                                .carousel-inner
+                                                button.carousel-control-prev(
+                                                    type='button',
+                                                    data-bs-target='#gzSeminarCarousel',
+                                                    data-bs-slide='prev',
+                                                    aria-label='Previous image'
+                                                )
+                                                    span.carousel-control-prev-icon(aria-hidden='true')
+                                                button.carousel-control-next(
+                                                    type='button',
+                                                    data-bs-target='#gzSeminarCarousel',
+                                                    data-bs-slide='next',
+                                                    aria-label='Next image'
+                                                )
+                                                    span.carousel-control-next-icon(aria-hidden='true')
+
+                            script#gz-seminar-guests-data(type='application/json')!= JSON.stringify(siteData.seminarGuests || [])

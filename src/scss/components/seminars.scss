@@ -1,0 +1,95 @@
+// School page — seminar guest cards open a photo modal (see scripts.js)
+
+.gz-seminar-card-trigger {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    text-align: inherit;
+    cursor: pointer;
+    border-radius: 0.5rem;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $primary;
+        outline-offset: 3px;
+    }
+
+    &:hover .gz-roster-card {
+        box-shadow: 0 0.85rem 1.5rem rgba($gz-black, 0.16);
+    }
+}
+
+.gz-seminar-card-trigger-inner {
+    height: 100%;
+}
+
+#gzSeminarModal {
+    .modal-header {
+        border-bottom: 1px solid $gz-gray-300b;
+    }
+
+    .modal-body {
+        // Breathing room around the carousel; keeps photo off header/footer edges
+        padding: 1.25rem 0 0;
+    }
+
+    // Side inset so prev/next chevrons sit in margin, not over the image
+    #gzSeminarCarousel.carousel {
+        padding: 0 3.25rem 4.5rem;
+    }
+
+    .carousel-indicators {
+        margin-bottom: 0.35rem;
+    }
+
+    .carousel-item {
+        padding-top: 0.25rem;
+    }
+
+    .carousel-item img {
+        display: block;
+        width: 100%;
+        max-height: min(58vh, 460px);
+        margin: 0 auto;
+        object-fit: contain;
+        object-position: center;
+        background: $gz-gray-900;
+        border-radius: 0.25rem;
+    }
+
+    // Single slide: no dots — caption sits above arrow hit area
+    #gzSeminarCarousel:not(.gz-seminar-carousel--multi) .carousel-caption {
+        bottom: 2rem;
+    }
+
+    // Multiple slides: reserve space for carousel indicators under the caption
+    #gzSeminarCarousel.gz-seminar-carousel--multi .carousel-caption {
+        bottom: 3.35rem;
+    }
+
+    .carousel-caption {
+        position: absolute;
+        right: 5%;
+        left: 5%;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 0.65rem 1rem;
+        text-align: center;
+        background: rgba($gz-black, 0.55);
+        border-radius: 0.35rem;
+
+        p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+    }
+}
