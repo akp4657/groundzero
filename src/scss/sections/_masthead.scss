@@ -17,6 +17,15 @@ header.masthead {
     background-attachment: scroll;
     background-size: cover;
 
+    .gz-masthead-wordmark {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     h1 {
         font-size: 2.25rem;
     }

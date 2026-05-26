@@ -15,14 +15,15 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-    color: $gz-black;
-    background-color: $gz-body-fallback;
+    color: $gz-white;
+    background-color: $gz-body-dark;
     display: flex;
     flex-direction: column;
 
     &.gz-body-textured {
-        background-color: $gz-gray-100;
-        background-image: url("../assets/img/bg.svg");
+        background-color: $gz-body-dark;
+        background-image: linear-gradient(rgba($gz-body-dark, 0.9), rgba($gz-body-dark, 0.9)),
+            url("../assets/img/bg.svg");
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -32,6 +33,32 @@ body {
 
 .gz-site-main {
     flex: 1 0 auto;
+    color: $gz-white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $gz-white;
+    }
+
+    .text-muted {
+        color: $gz-text-muted-on-dark !important;
+    }
+
+    .text-dark {
+        color: $gz-white !important;
+    }
+
+    a:not(.btn) {
+        color: $link-color;
+
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
 }
 
 //- Page section styling
@@ -39,11 +66,55 @@ body {
     padding: 8rem 0;
 }
 
-// Keep table bodies opaque over textured page backgrounds
-.table {
+// Tables on dark pages
+.gz-site-main .table {
+    --bs-table-color: #{$gz-white};
+    --bs-table-bg: #{$gz-surface-dark-raised};
+    --bs-table-border-color: #{$gz-surface-dark-border};
+    --bs-table-striped-bg: #{lighten($gz-surface-dark-raised, 3%)};
+    --bs-table-striped-color: #{$gz-white};
+    --bs-table-active-bg: #{lighten($gz-surface-dark-raised, 5%)};
+    --bs-table-hover-bg: #{lighten($gz-surface-dark-raised, 5%)};
+    --bs-table-hover-color: #{$gz-white};
+    color: $gz-white;
+    border-color: $gz-surface-dark-border;
+
+    thead.table-light,
+    thead.table-dark {
+        --bs-table-bg: #{darken($gz-gray-900, 4%)};
+        --bs-table-color: #{$gz-white};
+        --bs-table-border-color: #{$gz-surface-dark-border};
+        background-color: darken($gz-gray-900, 4%);
+        color: $gz-white;
+    }
+
     tbody tr > th,
     tbody tr > td {
-        background-color: $white;
+        background-color: $gz-surface-dark-raised;
+        border-color: $gz-surface-dark-border;
+        color: $gz-white;
+    }
+
+    &.table-striped > tbody > tr:nth-of-type(odd) > * {
+        background-color: lighten($gz-surface-dark-raised, 3%);
+        color: $gz-white;
+    }
+}
+
+// Results + title history — red outline only; row/column dividers stay light on dark
+.gz-table-red-frame {
+    border: 2px solid fade-out($gz-red, 0.38);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.28);
+
+    .table {
+        margin-bottom: 0;
+        --bs-table-border-color: #{fade-out($white, 0.72)};
+
+        > :not(caption) > * > * {
+            border-color: fade-out($white, 0.72);
+        }
     }
 }
 
@@ -70,10 +141,10 @@ body {
 }
 
 .gz-coach-card {
-    border: 1px solid $gz-gray-300b;
+    border: 1px solid $gz-surface-dark-border;
     border-radius: 0.5rem;
     overflow: hidden;
-    background: $white;
+    background: $gz-surface-dark;
     height: 100%;
 }
 
@@ -97,8 +168,8 @@ body {
     display: flex;
     flex-direction: column;
     border: 2px solid fade-out($gz-red, 0.62);
-    background: linear-gradient(180deg, $gz-white 0%, $gz-gray-100 100%);
-    box-shadow: 0 0.65rem 1.25rem rgba($gz-black, 0.12);
+    background: linear-gradient(180deg, $gz-surface-dark-raised 0%, $gz-surface-dark 100%);
+    box-shadow: 0 0.65rem 1.25rem rgba($gz-black, 0.35);
 
     .gz-roster-media {
         aspect-ratio: 3 / 4;
@@ -111,17 +182,18 @@ body {
         display: flex;
         flex-direction: column;
         border-top: 3px solid $gz-red;
-        background: linear-gradient(180deg, $gz-white 0%, #fff5f5 100%);
+        background: linear-gradient(180deg, lighten($gz-surface-dark-raised, 2%) 0%, $gz-surface-dark 100%);
+        color: $gz-white;
     }
 
     h2,
     h3 {
-        color: $gz-gray-900;
+        color: $gz-white;
         font-weight: 700;
     }
 
     .text-muted {
-        color: $gz-gray-600 !important;
+        color: $gz-text-muted-on-dark !important;
     }
 }
 
@@ -130,10 +202,11 @@ body {
     position: relative;
     padding: 1.35rem 1.5rem 1.5rem;
     border-radius: 0.5rem;
-    border: 1px solid fade-out($primary, 0.72);
-    background: linear-gradient(165deg, $white 0%, $gz-gray-100 50%, #fff8f8 100%);
-    box-shadow: 0 0.4rem 1.1rem rgba($gz-black, 0.08);
+    border: 1px solid fade-out($primary, 0.55);
+    background: linear-gradient(165deg, $gz-surface-dark-raised 0%, $gz-surface-dark 55%, darken($gz-surface-dark, 2%) 100%);
+    box-shadow: 0 0.4rem 1.1rem rgba($gz-black, 0.28);
     overflow: hidden;
+    color: $gz-white;
 
     &::before {
         content: '';
@@ -147,13 +220,84 @@ body {
 
     h2,
     h3 {
-        color: $gz-gray-900;
+        color: $gz-white;
         font-weight: 700;
     }
 }
 
-article[id^='coach-'] .coach-bio.gz-school-text-panel {
-    min-height: 100%;
+.gz-site-footer {
+    background: linear-gradient(180deg, darken($gz-gray-900, 2%) 0%, $gz-body-dark 100%);
+    color: fade-out($gz-white, 0.12);
+    border-top: 3px solid $primary;
+
+    hr {
+        border-color: $gz-surface-dark-border;
+        opacity: 1;
+    }
+
+    a {
+        color: fade-out($gz-white, 0.35);
+        text-decoration: none;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+
+    .text-muted {
+        color: $gz-text-muted-on-dark !important;
+    }
+}
+
+// School coaches row — portrait card vs bio panel read as distinct surfaces on $gz-body-dark
+article[id^='coach-'] {
+    .gz-roster-card {
+        border-color: fade-out($gz-red, 0.22);
+        background: linear-gradient(165deg, $gz-surface-school-portrait 0%, darken($gz-surface-school-portrait, 4%) 100%);
+        box-shadow:
+            0 0.75rem 1.5rem rgba($gz-black, 0.45),
+            0 0 0 1px rgba($gz-white, 0.08),
+            inset 0 1px 0 rgba($gz-white, 0.1);
+
+        .p-3 {
+            background: linear-gradient(180deg, $gz-surface-school-portrait-foot 0%, darken($gz-surface-school-portrait-foot, 3%) 100%);
+            border-top-color: $gz-red;
+        }
+    }
+
+    .coach-bio.gz-school-text-panel {
+        min-height: 100%;
+        border-color: fade-out($primary, 0.28);
+        background: linear-gradient(
+            155deg,
+            lighten($gz-surface-school-bio, 4%) 0%,
+            $gz-surface-school-bio 45%,
+            mix($gz-surface-school-bio, darken($primary, 28%), 92%) 100%
+        );
+        box-shadow:
+            0 0.75rem 1.5rem rgba($gz-black, 0.42),
+            0 0 0 1px rgba($gz-white, 0.06),
+            inset 0 1px 0 rgba($gz-white, 0.07);
+
+        &::before {
+            height: 4px;
+            background: linear-gradient(90deg, $primary, fade-out($primary, 0.45));
+        }
+    }
+}
+
+// Intro / seminars copy blocks (lighter than page, different from coach bios)
+.gz-school-text-panel:not(.coach-bio) {
+    border-color: fade-out($primary, 0.35);
+    background: linear-gradient(
+        165deg,
+        lighten($gz-surface-dark-raised, 5%) 0%,
+        $gz-surface-dark-raised 50%,
+        $gz-surface-dark 100%
+    );
+    box-shadow:
+        0 0.5rem 1.35rem rgba($gz-black, 0.38),
+        0 0 0 1px rgba($gz-white, 0.07);
 }
 
 // School: coach portrait framing (per person)

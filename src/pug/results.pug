@@ -18,7 +18,7 @@ block content
                 h2.h3.mb-2(class=idx > 0 ? 'mt-5 pt-2' : '') Ground Zero #{show.event}
                 p.text-muted.mb-4 #{show.date} — full card results.
 
-                .table-responsive(class=idx === recentResults.length - 1 ? 'mb-0' : 'mb-5')
+                .table-responsive.gz-table-red-frame(class=idx === recentResults.length - 1 ? 'mb-0' : 'mb-5')
                     table.table.table-striped.table-bordered.align-middle
                         thead.table-dark
                             tr

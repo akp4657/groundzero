@@ -1,23 +1,23 @@
 {
   "upcomingEvents": [
     {
-      "title": "Ground Zero - Chapter 10",
-      "date": "May 17, 2026",
+      "title": "Ground Zero x Wild Zero Dunn & Marcos 2",
+      "date": "August 29, 2026",
       "venue": "Aerial Arts of Rochester",
       "ticketUrl": "https://groundzeroshop.bigcartel.com/category/tickets",
-      "poster": "assets/img/events/Chapter9.jpg"
+      "poster": "assets/img/events/dunnandmarcos2.jpg"
     },
     {
       "title": "Wild Zero: Cunning but Brutal",
       "date": "May 28, 2026",
       "venue": "LUX",
-      "ticketUrl": "",
+      "ticketUrl": "https://groundzeroshop.bigcartel.com/category/tickets",
       "poster": ""
     },
     {
       "title": "Ground Zero - Chapter 11",
-      "date": "(Date TBA)",
-      "venue": "Rochester, NY",
+      "date": "September 20, 2026",
+      "venue": "Aerial Arts of Rochester",
       "ticketUrl": "",
       "poster": ""
     }
@@ -65,6 +65,52 @@
     }
   ],
   "results": [
+    {
+      "date": "May 17, 2026",
+      "event": "Ground Zero - Chapter 10",
+      "matches": [
+        {
+          "match": "Showcase Match",
+          "result": "Dior Nolins defeats TJ Epixx",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Price Purgold defeats Carter Mason",
+          "notes": ""
+        },
+        {
+          "match": "High Profile Scramble Match",
+          "result": "Cheech defeats CJ Settles, Kenny St★r, Cloudy, Jay Blast, and Julio Diamanté",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Mattick defeats Scott Richards",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Tag Team Title Match",
+          "result": "Primetime (c) defeats Fallout Theory",
+          "notes": ""
+        },
+        {
+          "match": "Grown Ass Man Challenge",
+          "result": "Hellbrid defeats Jack Issac",
+          "notes": ""
+        },
+        {
+          "match": "#1 Contender Battle Royal",
+          "result": "Price Purgold wins by eliminating CJ Settles",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "Chael Connors (c) defeats Richard Holliday",
+          "notes": ""
+        }
+      ]
+    },
     {
       "date": "Mar 8, 2026",
       "event": "Ground Zero - Chapter 9",

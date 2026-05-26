@@ -24,3 +24,13 @@ $link-hover-color: darken($gz-red, 6%);
 $min-contrast-ratio: 3;
 
 $gz-body-fallback: #fafafa;
+
+// Dark layout surfaces (main content + cards; brand red/gold unchanged)
+$gz-body-dark: #1a1d22;
+$gz-surface-dark: #2a2e36;
+$gz-surface-dark-raised: #343943;
+$gz-surface-dark-border: rgba($gz-white, 0.14);
+$gz-text-muted-on-dark: rgba($gz-white, 0.62);
+$gz-surface-school-portrait: #424a58;
+$gz-surface-school-portrait-foot: #4a5262;
+$gz-surface-school-bio: #323842;

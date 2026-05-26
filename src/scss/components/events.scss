@@ -1,10 +1,14 @@
 // Events page — upcoming list + ticket / shop cards
 .gz-events-upcoming-list {
-    background: $white;
-    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.06);
+    background: $gz-surface-dark-raised;
+    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.28);
+    border: 1px solid $gz-surface-dark-border;
+    color: $gz-white;
 
     .list-group-item {
-        border-color: fade-out($primary, 0.82);
+        background-color: $gz-surface-dark-raised;
+        color: $gz-white;
+        border-color: fade-out($primary, 0.55);
     }
 }
 
@@ -13,8 +17,9 @@
     border: 2px solid $primary;
     border-radius: 0.5rem;
     overflow: hidden;
-    background: $white;
-    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.1);
+    background: $gz-surface-dark-raised;
+    color: $gz-white;
+    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.28);
     display: flex;
     flex-direction: column;
 
@@ -67,6 +72,12 @@
     .card-body {
         flex: 0 0 auto;
         border-top: none;
+        background: $gz-surface-dark;
+        color: $gz-white;
+    }
+
+    .text-muted {
+        color: $gz-text-muted-on-dark !important;
     }
 
     .gz-event-card__title {

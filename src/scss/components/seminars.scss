@@ -32,8 +32,22 @@
 }
 
 #gzSeminarModal {
+    .modal-content {
+        background: $gz-surface-dark-raised;
+        color: $gz-white;
+        border: 1px solid $gz-surface-dark-border;
+    }
+
     .modal-header {
-        border-bottom: 1px solid $gz-gray-300b;
+        border-bottom: 1px solid $gz-surface-dark-border;
+
+        .modal-title {
+            color: $gz-white;
+        }
+
+        .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
     }
 
     .modal-body {
