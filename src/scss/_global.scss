@@ -251,7 +251,12 @@ body {
 
 // School coaches row — portrait card vs bio panel read as distinct surfaces on $gz-body-dark
 article[id^='coach-'] {
+    .row {
+        align-items: flex-start;
+    }
+
     .gz-roster-card {
+        height: auto;
         border-color: fade-out($gz-red, 0.22);
         background: linear-gradient(165deg, $gz-surface-school-portrait 0%, darken($gz-surface-school-portrait, 4%) 100%);
         box-shadow:
@@ -260,13 +265,14 @@ article[id^='coach-'] {
             inset 0 1px 0 rgba($gz-white, 0.1);
 
         .p-3 {
+            flex: 0 0 auto;
             background: linear-gradient(180deg, $gz-surface-school-portrait-foot 0%, darken($gz-surface-school-portrait-foot, 3%) 100%);
             border-top-color: $gz-red;
         }
     }
 
     .coach-bio.gz-school-text-panel {
-        min-height: 100%;
+        min-height: 0;
         border-color: fade-out($primary, 0.28);
         background: linear-gradient(
             155deg,
@@ -283,6 +289,60 @@ article[id^='coach-'] {
             height: 4px;
             background: linear-gradient(90deg, $primary, fade-out($primary, 0.45));
         }
+
+        // Sectioned copy — lead + labeled blocks instead of a single text wall
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+        padding: 1.35rem 1.4rem 1.45rem;
+    }
+
+    .coach-bio__group {
+        padding: 0.9rem 1rem 1rem;
+        border-radius: 0.35rem;
+        background: rgba($gz-black, 0.18);
+        border: 1px solid rgba($gz-white, 0.06);
+
+        &--lead {
+            background: rgba($primary, 0.09);
+            border-color: fade-out($primary, 0.55);
+            border-left: 3px solid $primary;
+            border-radius: 0 0.35rem 0.35rem 0;
+            padding: 1rem 1.05rem 1.05rem 1.1rem;
+
+            .coach-bio__text {
+                color: rgba($gz-white, 0.94) !important;
+                font-size: 1.03rem;
+                line-height: 1.62;
+            }
+        }
+
+        &--close {
+            background: rgba($gz-black, 0.1);
+            border-style: dashed;
+            border-color: rgba($gz-white, 0.1);
+
+            .coach-bio__text {
+                font-size: 0.94rem;
+                line-height: 1.68;
+            }
+        }
+    }
+
+    .coach-bio__heading {
+        margin: 0 0 0.45rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: $primary;
+    }
+
+    .coach-bio__text {
+        margin: 0;
+        font-size: 0.96rem;
+        line-height: 1.72;
+        color: $gz-text-muted-on-dark !important;
     }
 }
 

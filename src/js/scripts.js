@@ -192,6 +192,9 @@ window.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             const guest = guests[idx];
+            if (!guest.slides || !guest.slides.length) {
+                return;
+            }
             titleEl.textContent = guest.name || 'Seminar';
             buildCarousel(guest);
             modal.show();

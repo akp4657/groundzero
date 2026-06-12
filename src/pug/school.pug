@@ -1,5 +1,18 @@
 extends layouts/base
 
+include mixins/coach-bio
+
+mixin seminarGuestCard(seminarImg, guest, seminarTag, seminarDetail)
+    .gz-coach-card.gz-roster-card.text-start.h-100
+        .gz-roster-media
+            img(src=seminarImg, alt='', decoding='async')
+        .p-3
+            h2.h5= guest.name
+            if seminarTag
+                p.small.text-muted.mb-2= seminarTag
+            if seminarDetail
+                p.small.mb-0= seminarDetail
+
 append variables
     - pageTitle = 'School | Ground Zero Wrestling'
     - pageDescription = 'Train at Rochester’s premier pro wrestling school with coaches from major promotions worldwide.'
@@ -41,93 +54,126 @@ block content
                     article#coach-colin.mb-5(aria-labelledby='coach-colin-heading')
                         .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                .gz-coach-card.gz-roster-card.text-dark
                                     .gz-roster-media
                                         img(src='assets/img/coaches/Colin_Delaney.jpg', alt='', aria-hidden='true')
                                     .p-3
                                         h3#coach-colin-heading.h5.mb-0 Colin Delaney
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
-                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
-                                    p.text-muted.mb-0.flex-grow-1
-                                        | Best known for wrestling for WWE. He has also wrestled for promotions such as 2CW Squared Circle Wrestling, Chikara, NWA Upstate, Pier 6 Wrestling, 
-                                        | Buffalo Championship Wrestling, NWA Empire, LakeShore Wrestling, UWA Hardcore Wrestling, Roc City Wrestling, and CZW. Colin brings a wealth of
-                                        | experience and knowledge to the school. Helping students learn what it truly takes to make it to the highest levels of the sport.
+                                +coachBioPanel
+                                    +coachBioLead
+                                        | Colin Delaney is a veteran professional wrestler, trainer, and WWE alumnus with more than 20 years of experience in the professional wrestling industry. Having competed on national television for WWE’s ECW brand and across some of the most respected independent promotions in North America, Delaney brings a wealth of in-ring knowledge and real-world experience to every training session.
+                                    +coachBioSection('Career Highlights')
+                                        | Throughout his career, Delaney has captured numerous championships, including the AIW Absolute Championship, AIW Tag Team Championships, the NWA Empire Heavyweight Championship, NWA Empire Tag Team Championship, NWA Empire Lord of the Dance Championship, IWC Tag Team Championship, NWA Upstate Tag Team Championship, 2CW Tag Team Championship, and multiple regional titles across the independent wrestling scene.
+                                    +coachBioSection('As a Trainer')
+                                        | Colin emphasizes strong fundamentals, ring psychology, character development, conditioning, and professionalism. His coaching philosophy is built on preparing wrestlers for long-term success, whether their goals are to compete on the independent circuit, perform on television, or develop into complete professional athletes.
+                                    +coachBioClose
+                                        | Drawing from two decades of experience sharing the ring with top talent and performing before audiences around the world, Colin provides hands-on instruction that helps students sharpen their skills, build confidence, and gain a deeper understanding of every aspect of professional wrestling.
 
                     article#coach-mattick.mb-5(aria-labelledby='coach-mattick-heading')
                         .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                .gz-coach-card.gz-roster-card.text-dark
                                     .gz-roster-media
                                         img(src='assets/img/coaches/Mattick.png', alt='', aria-hidden='true')
                                     .p-3
                                         h3#coach-mattick-heading.h5.mb-0 Mattick
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
-                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
-                                    p.text-muted.mb-0.flex-grow-1
-                                        | Mattick has trained Rochester students for five years with a focus on fundamentals, work ethic,
-                                        |  and the belief that consistent reps build confident performers.
+                                +coachBioPanel
+                                    +coachBioLead
+                                        | Mattick is a veteran professional wrestler, trainer, and mentor whose career has been built on perseverance, continuous growth, and a passion for professional wrestling. Trained by respected veteran Colin Delaney, Mattick has spent more than a decade honing his craft while establishing himself as one of the most recognizable competitors on the Western New York independent wrestling scene. Since making his debut in 2013, he has developed a reputation for his hard-hitting style, athleticism, and dedication to the fundamentals of professional wrestling.
+                                    +coachBioSection('In the Ring')
+                                        | Throughout his career, Mattick has competed against and alongside a wide range of established independent wrestling stars and nationally recognized talent, gaining invaluable experience in front of diverse audiences and in various wrestling environments. These opportunities have helped shape his understanding of ring psychology, character development, and the professionalism required to succeed in the industry.
+                                    +coachBioSection('Accolades')
+                                        | As a competitor, Mattick earned recognition in Pro Wrestling Illustrated’s PWI 500 rankings, a testament to his hard work and commitment to excellence inside the ring. His accomplishments as both a singles wrestler and tag team competitor have made him a respected figure throughout the Northeast wrestling scene.
+                                    +coachBioSection('As a Trainer')
+                                        | Mattick focuses on helping students build strong fundamentals, ring awareness, conditioning, and confidence. Drawing from over a decade of experience, he emphasizes the importance of work ethic, adaptability, and attention to detail while creating a positive environment where wrestlers of all skill levels can learn and grow.
+                                    +coachBioClose
+                                        | Whether working with aspiring wrestlers taking their first steps into the business or experienced performers looking to refine their craft, Mattick is dedicated to passing on the knowledge, discipline, and passion that have defined his own wrestling journey.
 
                     article#coach-nick.mb-5(aria-labelledby='coach-nick-heading')
                         .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                .gz-coach-card.gz-roster-card.text-dark
                                     .gz-roster-media
                                         img(src='assets/img/coaches/nickando.png', alt='', aria-hidden='true')
                                     .p-3
                                         h3#coach-nick-heading.h5.mb-0 Nick Ando
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
-                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
-                                    p.text-muted.mb-0.flex-grow-1
-                                        | Former 2CW heavyweight champion with titles across New York, Nick emphasizes technical detail,
-                                        |  pacing, and the small moments that separate good matches from great ones.
+                                +coachBioPanel
+                                    +coachBioLead
+                                        | Nick Ando is a highly respected professional wrestler, coach, and mentor whose career has been defined by technical excellence, athleticism, and a commitment to helping others succeed. With years of experience competing throughout the independent wrestling scene, Ando has developed a reputation as a versatile performer capable of excelling in both singles and tag team competition while consistently demonstrating the fundamentals that form the foundation of professional wrestling.
+                                    +coachBioSection('Experience')
+                                        | Throughout his career, Ando has competed against and alongside some of the biggest names in professional wrestling, including Matt Hardy, Vader, Johnny Gargano, Kevin Steen, and The Good Brothers to name a few. These experiences have given him a unique perspective on the level of preparation, professionalism, and adaptability required to compete at the highest levels of the industry.
+                                    +coachBioSection('As a Trainer')
+                                        | Nick emphasizes strong fundamentals, conditioning, ring psychology, movement, and professional development. He believes that success in wrestling comes from mastering the details, and he works closely with students to help them build confidence, sharpen their abilities, and develop their own unique identities as performers.
+                                    +coachBioClose
+                                        | Known for his patient and hands-on approach to coaching, Ando is committed to creating a positive learning environment where wrestlers of all experience levels can grow. Whether training beginners taking their first bumps or experienced competitors looking to elevate their game, Nick brings passion, knowledge, and a genuine investment in the success of every student he works with. His goal is not only to create better wrestlers, but to help develop complete performers who are prepared for every opportunity the industry presents.
 
                     article#coach-krist.mb-5(aria-labelledby='coach-krist-heading')
                         .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                .gz-coach-card.gz-roster-card.text-dark
                                     .gz-roster-media
                                         img(src='assets/img/coaches/kristworthless.png', alt='', aria-hidden='true')
                                     .p-3
                                         h3#coach-krist-heading.h5.mb-0 Krist XW
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
-                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
-                                    p.text-muted.mb-0.flex-grow-1
-                                        | Krist trained under Tim Thatcher, Toni Storm, and Gunther while overseas, bringing strict dojo-style
-                                        |  habits plus deep knowledge of production and backstage workflows.
+                                +coachBioPanel
+                                    +coachBioLead
+                                        | Krist Worthless brings a unique international perspective to professional wrestling training, combining years of in-ring experience with advanced education from some of the most respected wrestling systems in the world. Dedicated to the craft of professional wrestling, Worthless has expanded his knowledge far beyond the traditional independent wrestling path by studying and training internationally to develop a deeper understanding of both the athletic and psychological aspects of the profession.
+                                    +coachBioSection('International Training')
+                                        | His wrestling education includes training and study in Japan, where he gained firsthand experience with the discipline, conditioning, and strong-style fundamentals that have made Japanese professional wrestling renowned worldwide. In addition, Worthless furthered his development in Germany under the guidance of WALTER (now known as Gunther), learning the hard-hitting European style that emphasizes precision, physicality, ring psychology, and purposeful storytelling.
+                                    +coachBioSection('As a Trainer')
+                                        | Krist combines these international influences with practical independent wrestling experience to provide students with a well-rounded approach to the sport. His instruction focuses on fundamentals, striking, movement, ring awareness, psychology, conditioning, and developing a professional mindset that prepares wrestlers for success in any environment.
+                                    +coachBioSection('Teaching Philosophy')
+                                        | Known for his passion for learning and teaching, Worthless encourages students to embrace continuous growth while building a strong foundation that will serve them throughout their careers. Drawing from his experiences training across different wrestling cultures, he helps aspiring wrestlers understand not only how to perform moves, but why every action inside the ring matters.
+                                    +coachBioClose
+                                        | Whether working with beginners or experienced competitors, Krist Worthless is committed to helping students elevate their skills, expand their knowledge, and develop into complete professional wrestlers capable of succeeding anywhere in the world.
 
                     article#coach-cloudy.mb-5(aria-labelledby='coach-cloudy-heading')
                         .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                .gz-coach-card.gz-roster-card.text-dark
                                     .gz-roster-media
                                         img(src='assets/img/coaches/cloudy.png', alt='', aria-hidden='true')
                                     .p-3
                                         h3#coach-cloudy-heading.h5.mb-0 Cloudy
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
-                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
-                                    p.text-muted.mb-0.flex-grow-1
-                                        | A veteran of CZW, Ring of Honor, Chikara, Dragon Gate USA, IWA-MS, IWS, UWA, 2CW, and more,
-                                        |  Cloudy has shared the ring with international stars and stresses adaptable, hard-hitting storytelling.
+                                +coachBioPanel
+                                    +coachBioLead
+                                        | A veteran of the independent wrestling scene with more than two decades of experience, Cloudy has earned a reputation as one of the most respected competitors and tag team specialists in the Northeast. Since making his professional debut in 2002, he has competed for numerous promotions throughout the United States and Canada, showcasing a hard-hitting style, strong fundamentals, and a deep understanding of in-ring storytelling.
+                                    +coachBioSection('Career Highlights')
+                                        | Throughout his career, Cloudy has captured multiple championships, including several NWA Upstate Tag Team Championships alongside longtime partner Cheech, the NWA Upstate No Limits Championship, the 2CW Tag Team Championship, and numerous regional titles. Cloudy has helped establish one of the most successful and influential teams on the independent wrestling circuit, earning recognition for exceptional chemistry, innovative offense, and consistent performances against top competition.
+                                    +coachBioSection('As a Trainer')
+                                        | Cloudy emphasizes the fundamentals that create lasting success in professional wrestling: ring awareness, psychology, conditioning, teamwork, and professionalism. His extensive experience in both singles and tag team competition allows him to provide students with a well-rounded perspective on every aspect of the industry.
+                                    +coachBioClose
+                                        | Drawing from years of experience competing against some of the best talent in professional wrestling, Cloudy is dedicated to helping the next generation of wrestlers develop their skills, build confidence, and prepare for success both inside and outside the ring.
 
                     article#coach-cheech.mb-5(aria-labelledby='coach-cheech-heading')
                         .row.align-items-stretch.gy-3
                             .col-md-4.col-lg-3
-                                .gz-coach-card.gz-roster-card.text-dark.h-100
+                                .gz-coach-card.gz-roster-card.text-dark
                                     .gz-roster-media
                                         img(src='assets/img/coaches/cheech.png', alt='', aria-hidden='true')
                                     .p-3
                                         h3#coach-cheech-heading.h5.mb-0 Cheech
                             .col-md-8.col-lg-9.d-flex.align-items-stretch
-                                .coach-bio.gz-school-text-panel.flex-grow-1.d-flex.flex-column
-                                    p.text-muted.mb-0.flex-grow-1
-                                        | Cheech supports classes with a focus on in-ring presence, humor as a weapon, and helping students
-                                        |  find authentic characters that connect with crowds.
+                                +coachBioPanel
+                                    +coachBioLead
+                                        | With more than two decades of experience in professional wrestling, Cheech Hernandez has established himself as one of the most respected and innovative competitors on the independent wrestling scene. Since debuting in 2004, Cheech has competed throughout the United States and Canada, earning a reputation for his high-energy style, technical ability, and creative approach to professional wrestling.
+                                    +coachBioSection('Career Highlights')
+                                        | A highly accomplished champion, Cheech’s career accolades include four AIW Tag Team Championships alongside Colin Delaney, the A1 Zero Gravity Championship, A1 Tag Team Championship, IWA Mid-South Championship, IWS Tag Team Championship, NWA Upstate No Limits Championship, multiple NWA Upstate Tag Team Championships with longtime partner Cloudy, the 2CW Tag Team Championship, and several heavyweight and regional titles throughout the Northeast independent wrestling scene.
+                                    +coachBioSection('As a Trainer')
+                                        | Cheech combines years of in-ring experience with a passion for developing the next generation of wrestlers. His instruction emphasizes fundamentals, athletic movement, tag team wrestling, ring psychology, character development, and adapting to the evolving demands of the industry. Whether working with beginners or experienced competitors, Cheech is committed to helping students build the skills, confidence, and professionalism necessary for long-term success in professional wrestling.
+                                    +coachBioClose
+                                        | Drawing from a career that has spanned premier independent promotions across North America, Cheech offers students a unique perspective on what it takes to succeed both inside the ring and beyond it.
 
                     #seminars-at-ground-zero.mt-5.pt-4(aria-labelledby='seminars-heading')
                         .gz-school-text-panel.mb-4
                             h2#seminars-heading.h3.mb-3 Seminars
                             p.text-muted.mb-0
-                                | Seminar guests. Click on a card to show more.
+                                | Seminar guests. Cards with extra photos open a gallery when clicked.
 
                         if siteData.seminarGuests && siteData.seminarGuests.length
                             .row.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4
@@ -136,24 +182,21 @@ block content
                                         const seminarImg = guest.image || 'assets/img/roster/placeholder.svg'
                                         const seminarTag = guest.date || ''
                                         const seminarDetail = guest.note || ''
+                                        const hasSeminarGallery = guest.hasGallery && guest.slides && guest.slides.length
                                     .col.h-100
-                                        button.gz-seminar-card-trigger(
-                                            type='button',
-                                            data-seminar-index=guestIdx,
-                                            aria-haspopup='dialog',
-                                            aria-controls='gzSeminarModal',
-                                            aria-label=`Open seminar photos: ${guest.name}`
-                                        )
-                                            span.gz-seminar-card-trigger-inner.d-block
-                                                .gz-coach-card.gz-roster-card.text-start.h-100
-                                                    .gz-roster-media
-                                                        img(src=seminarImg, alt='', decoding='async')
-                                                    .p-3
-                                                        h2.h5= guest.name
-                                                        if seminarTag
-                                                            p.small.text-muted.mb-2= seminarTag
-                                                        if seminarDetail
-                                                            p.small.mb-0= seminarDetail
+                                        if hasSeminarGallery
+                                            button.gz-seminar-card-trigger(
+                                                type='button',
+                                                data-seminar-index=guestIdx,
+                                                aria-haspopup='dialog',
+                                                aria-controls='gzSeminarModal',
+                                                aria-label=`Open seminar photos: ${guest.name}`
+                                            )
+                                                span.gz-seminar-card-trigger-inner.d-block
+                                                    +seminarGuestCard(seminarImg, guest, seminarTag, seminarDetail)
+                                        else
+                                            .gz-seminar-card-static.h-100
+                                                +seminarGuestCard(seminarImg, guest, seminarTag, seminarDetail)
 
                             #gzSeminarModal.modal.fade(
                                 tabindex='-1',

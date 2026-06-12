@@ -1,0 +1,20 @@
+mixin coachBioPanel()
+    .coach-bio.gz-school-text-panel.flex-grow-1
+        block
+
+mixin coachBioLead()
+    .coach-bio__group.coach-bio__group--lead
+        p.coach-bio__text.mb-0
+            block
+
+mixin coachBioSection(title)
+    .coach-bio__group
+        if title
+            h4.coach-bio__heading= title
+        p.coach-bio__text.mb-0
+            block
+
+mixin coachBioClose()
+    .coach-bio__group.coach-bio__group--close
+        p.coach-bio__text.mb-0
+            block

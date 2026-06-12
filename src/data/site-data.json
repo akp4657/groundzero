@@ -25,41 +25,36 @@
   "seminarGuests": [
     {
       "name": "Bill Collier",
-      "image": "assets/img/roster/placeholder.svg",
-      "date": "2025",
-      "note": "",
-      "slides": [
-        {
-          "image": "assets/img/roster/placeholder.svg",
-          "caption": "Seminar photo"
-        },
-        {
-          "image": "assets/img/roster/placeholder.svg",
-          "caption": "Training photo"
-        }
-      ]
+      "date": "2026",
+      "note": ""
     },
     {
       "name": "Chris Hero",
-      "image": "assets/img/roster/placeholder.svg",
       "date": "2025",
       "note": ""
     },
     {
       "name": "Mike Santana",
-      "image": "assets/img/roster/placeholder.svg",
+      "date": "2026",
+      "note": ""
+    },
+    {
+      "name": "Dalton Castle",
+      "date": "2025",
+      "note": ""
+    },
+    {
+      "name": "Brian Kendrick",
       "date": "2025",
       "note": ""
     },
     {
       "name": "Jonathan Gresham",
-      "image": "assets/img/roster/placeholder.svg",
       "date": "2025",
       "note": ""
     },
     {
       "name": "Lince Dorado",
-      "image": "assets/img/roster/placeholder.svg",
       "date": "2024",
       "note": ""
     }

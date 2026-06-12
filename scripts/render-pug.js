@@ -4,6 +4,7 @@ const upath = require('upath');
 const pug = require('pug');
 const sh = require('shelljs');
 const prettier = require('prettier');
+const enrichSeminarGuests = require('./enrich-seminar-guests');
 
 function getReignDays(won, lost) {
     if (!won) {
@@ -34,7 +35,7 @@ module.exports = function renderPug(filePath) {
     const destPath = filePath.replace(/src\/pug\//, 'dist/').replace(/\.pug$/, '.html');
     const srcPath = upath.resolve(upath.dirname(__filename), '../src');
     const siteDataPath = upath.resolve(srcPath, 'data/site-data.json');
-    const siteData = JSON.parse(fs.readFileSync(siteDataPath, 'utf8'));
+    const siteData = enrichSeminarGuests(JSON.parse(fs.readFileSync(siteDataPath, 'utf8')), srcPath);
 
     console.log(`### INFO: Rendering ${filePath} to ${destPath}`);
     const html = pug.renderFile(filePath, {
