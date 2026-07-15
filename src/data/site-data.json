@@ -107,6 +107,27 @@
       ]
     },
     {
+      "date": "Mar 29, 2026",
+      "event": "GZ Wrestling Day 2",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Andrew Mossbrooks defeats Mattick",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Rochester Radicalz defeat Colt Allen / My Chemical Bromance",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "Chael Connors (c) defeats Price Purgold",
+          "notes": ""
+        }
+      ]
+    },
+    {
       "date": "Mar 8, 2026",
       "event": "Ground Zero - Chapter 9",
       "matches": [
@@ -162,7 +183,7 @@
           "notes": "Wins the tournament. Sponsored by @hiddenangels_homehealth"
         },
         {
-          "match": "Multi-Competitor Match",
+          "match": "Scramble Match",
           "result": "Cheech defeats Darren Crowe, Hellbrid, Adam Wacker, Scott Richards, and Jack Isaac",
           "notes": ""
         },
@@ -190,6 +211,437 @@
           "match": "Ground Zero Title Match",
           "result": "Chael Connors defeats CJ Settles (c)",
           "notes": "TITLE CHANGE"
+        }
+      ]
+    },
+    {
+      "date": "Sep 14, 2025",
+      "event": "Dunn & Marcos Cup Night 2",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "High Seas defeat St★rburst",
+          "notes": ""
+        },
+        {
+          "match": "NWF GL Penn Can TV Championship",
+          "result": "Ryze defeats Jay Freddie",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Greed defeats Mane Event",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Jeremiah Richter defeats Lotto, Sa1nt, Carmelo Lee, Dakoda Orion, and Groff",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Hellbrid defeats Delmi Exo",
+          "notes": ""
+        },
+        {
+          "match": "Dunn & Marcos Cup Final",
+          "result": "High Seas defeat Greed",
+          "notes": "High Seas win the Dunn & Marcos Cup"
+        }
+      ]
+    },
+    {
+      "date": "Sep 13, 2025",
+      "event": "Dunn & Marcos Cup Night 1",
+      "matches": [
+        {
+          "match": "Last Chance Battle Royal",
+          "result": "St★rburst wins Last Chance Battle Royal",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "High Seas defeat PME",
+          "notes": ""
+        },
+        {
+          "match": "Ganjo Match",
+          "result": "Pat Sawyer defeats Krist Worthless",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Greed defeats Post Game",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Mane Event defeat xEdgeOfHopex",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "CJ Settles (c) defeats Dick Justice",
+          "notes": ""
+        },
+        {
+          "match": "Multi-Team Match",
+          "result": "St★rburst defeat Carnage Crew, To Infinity & Beyond, and CXR",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Jun 29, 2025",
+      "event": "Ground Zero - Chapter 7",
+      "matches": [
+        {
+          "match": "Tag Team Match",
+          "result": "Thrillville defeat High Seas / Eden Grey",
+          "notes": ""
+        },
+        {
+          "match": "#1 Contender Gauntlet",
+          "result": "Chael Connors outlasts Ryze, Mattick, Hellbrid, Scott Richards, TJ Epixx, Julian Jewelz, Carmelo Lee, and Sa1nt",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Cheech & Chael Connors defeat First Shot",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Dicks Unified Monster Bashers defeat Heresy / Groff",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "CJ Settles (c) defeats Bill Collier",
+          "notes": ""
+        },
+        {
+          "match": "Steel Cage Match",
+          "result": "Body Bag Bros defeat Greed",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Apr 27, 2025",
+      "event": "Ground Zero - Chapter 6",
+      "matches": [
+        {
+          "match": "Six-Man Tag Team Match",
+          "result": "Chael Connors & To Infinity & Beyond defeat Court Of Conquest",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Scott Richards defeats Mattick",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "St★rburst defeat High Seas",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Sa1nt defeats Ryze, Dewey Murray, Dakoda Orion, Shaggy Hanson, and Julian Jewelz",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Carmelo Lee defeats TJ Epixx",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Hellbrid defeats Kayda Cyn",
+          "notes": ""
+        },
+        {
+          "match": "No DQ Match",
+          "result": "Greed defeat Body Bag Bros",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Apr 1, 2025",
+      "event": "GZ Wrestling Day",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Cheech defeats Ryze",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "High Seas defeat St★rburst",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Feb 16, 2025",
+      "event": "Ground Zero - Chapter 5",
+      "matches": [
+        {
+          "match": "Tag Team Match",
+          "result": "Body Bag Bros defeat The “Real” Greed (Dan Macchio / TJ Kartz)",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Hellbrid defeats Lay’lah James",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Chael Connors defeats Cloudy, Damien Saint, Groff, Ryze, and Carmelo Lee",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Greed defeat St★rburst",
+          "notes": ""
+        },
+        {
+          "match": "GZ Championship Royale",
+          "result": "CJ Settles wins the GZ Championship Royale",
+          "notes": "Crowned inaugural Ground Zero Champion"
+        }
+      ]
+    },
+    {
+      "date": "Nov 28, 2024",
+      "event": "Upstate Uproar III",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Kenny St★r defeats Cloudy",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "xEdgeOfHopex defeat Arcade Heroes",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Cheech defeats Carmelo Lee",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Sa1nt defeats Colin Delaney, Nick Ando, Krist Worthless, Price Purgold, and CJ Settles",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Body Bag Bros defeat Let it Rock",
+          "notes": ""
+        },
+        {
+          "match": "Triple Threat Match",
+          "result": "Darren Crowe defeats Ryze and Dakoda Orion",
+          "notes": ""
+        },
+        {
+          "match": "Battle Royal",
+          "result": "Hellbrid wins Battle Royal",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Keenan Moore defeats Julio Diamante",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Nov 10, 2024",
+      "event": "Ground Zero - Chapter 4",
+      "matches": [
+        {
+          "match": "GZST Finals",
+          "result": "Chael Connors defeats Darren Crowe",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Carmelo defeats Don Freeze, David Coles, Julian Jewelz, Ash Bennett, and Travis 3000",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Scott Richards & Dick Justice defeat Krist Worthless & Will Carroll",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Thrillville defeat xEdgeOfHopex",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "CJ Settles defeats John McChesney",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Damien Saint defeats Groff",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Rochester Radicalz defeat Greed",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Aug 11, 2024",
+      "event": "Ground Zero - Chapter 3",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Dirty Dango defeats Tommy K",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "xEdgeOfHopex defeat St★rburst",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Dick Justice defeats Krist Worthless",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "High Seas defeat Body Bag Bros",
+          "notes": "via DQ"
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Greed defeat To Infinity & Beyond",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Damien Saint defeats Eli, Dakoda Orion, Anthony Musso, Tyger Kid, and Vince Valor",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Kayda Cyn defeats RC Dupree",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "CJ Settles defeats Brian Kendrick",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "May 19, 2024",
+      "event": "Ground Zero - Chapter 2",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Nick Ando defeats Julio Diamante",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Bill Collier defeats CJ Settles",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Cloudy defeats Groff, Aiden Hall, Jay Flyier, Tommy K, and Vince Valor",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Price Purgold defeats Colin Delaney",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Tyger Kid vs. Scott Richards ends in a No Contest",
+          "notes": ""
+        },
+        {
+          "match": "EWF Championship",
+          "result": "HC Loc (c) defeats Krist Worthless",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Body Bag Bros defeat CXR",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Mellow Tong defeats Matt McCoy",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "Dalton Castle & St★rburst defeat xEdgeOfHopex",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "date": "Feb 18, 2024",
+      "event": "Ground Zero - Chapter 1",
+      "matches": [
+        {
+          "match": "Singles Match",
+          "result": "Price Purgold defeats Bill Collier",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "CJ Settles defeats Nick Ando",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Chael Connors defeats Mattick",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "To Infinity & Beyond defeat Body Bag Bros",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Kenny St★r defeats Krist Worthless, Don Freeze, Keenan Moore, Maxwell Keith, and Kairo",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Cloudy defeats Mellow Tong",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "xEdgeOfHopex (Jeremiah Richter / Cerin Rahne) defeat Dewey Murray / Sebastian Braun",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Lince Dorado defeats Julio Diamante",
+          "notes": ""
         }
       ]
     }
