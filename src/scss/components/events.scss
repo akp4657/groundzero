@@ -44,13 +44,15 @@
         }
 
         &--poster {
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
             background-color: $gz-black;
 
             > img {
-                // Shift poster down only (no scale). Top gap shows black behind.
-                transform: translateY(12%);
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                object-position: center;
             }
         }
 

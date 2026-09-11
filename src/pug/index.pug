@@ -35,13 +35,25 @@ block content
                 .col-lg-10.text-center
                     h2.mt-0 Upcoming Events
                     hr.divider
-                    img.img-fluid.rounded.shadow-sm.mb-4.border.border-3.border-primary(
-                        src='assets/img/events/dunnandmarcos2.jpg',
-                        alt='Dunn and Marcos 2 event poster'
-                    )
-                    p.text-muted.mb-4
-                        | Shop merch and tickets at the Ground Zero store, plus featured Eventbrite listings when shows go live.
-                    a.btn.btn-primary.btn-xl(href='https://groundzeroshop.bigcartel.com/category/tickets') Buy Tickets
+                    - const nextEvent = siteData.upcomingEvents && siteData.upcomingEvents[0]
+                    if nextEvent
+                        img.img-fluid.rounded.shadow-sm.mb-4.border.border-3.border-primary(
+                            src=nextEvent.poster || 'assets/img/events/chapter-placeholder.svg',
+                            alt=`${nextEvent.title} event poster`
+                        )
+                        p.text-muted.mb-2
+                            strong #{nextEvent.title}
+                            |  — #{nextEvent.date}#{nextEvent.venue ? ' at ' + nextEvent.venue : ''}
+                        p.text-muted.mb-4
+                            | Part of the Rochester Fringe Festival. Tickets via Fringe, plus merch in the Ground Zero shop.
+                        if nextEvent.ticketUrl
+                            a.btn.btn-primary.btn-xl(href=nextEvent.ticketUrl, rel='noopener noreferrer', target='_blank') Buy Tickets
+                        else
+                            a.btn.btn-primary.btn-xl(href='https://groundzeroshop.bigcartel.com/category/tickets') Buy Tickets
+                    else
+                        p.text-muted.mb-4
+                            | Shop merch and tickets at the Ground Zero store, plus ticket links when shows go live.
+                        a.btn.btn-primary.btn-xl(href='https://groundzeroshop.bigcartel.com/category/tickets') Buy Tickets
 
     section#school.page-section.bg-primary
         .container.px-4.px-lg-5

@@ -37,7 +37,7 @@ block content
                         .card.gz-event-card.h-100.w-100
                             .gz-event-card__media.gz-event-card__media--poster
                                 img(
-                                    src=featuredEvent.poster || 'assets/img/events/Chapter9.jpg',
+                                    src=featuredEvent.eventsPoster || featuredEvent.poster || 'assets/img/events/Chapter9.jpg',
                                     alt=`${featuredEvent.title} event poster`
                                 )
                             .gz-event-card__body-push.flex-grow-1

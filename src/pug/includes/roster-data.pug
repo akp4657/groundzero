@@ -27,9 +27,9 @@
         {
             name: 'Chael Connors',
             image: 'assets/img/roster/chaelconnors.PNG',
-            tagline: 'Ground Zero Champion',
+            tagline: '',
             detail: '',
-            featured: true,
+            featured: false,
         },
         {
             name: 'Cheech',
@@ -168,10 +168,10 @@
         {
             name: 'Price Purgold',
             image: 'assets/img/roster/price.png',
-            tagline: '"The Investment"',
+            tagline: 'Ground Zero Champion',
             detail: 'Greed',
             focalScale: 1.1,
-            featured: false,
+            featured: true,
         },
         {
             name: 'Ryze',
@@ -233,7 +233,16 @@
     ]
 
 -
-    const rosterFeatured = rosterPeople.filter((p) => p.featured)
+    //- Home teaser: tag champs flank the Ground Zero Champion (left / center / right)
+    const rosterFeatured = (() => {
+        const featured = rosterPeople.filter((p) => p.featured)
+        const gzChamp = featured.find((p) => p.tagline === 'Ground Zero Champion')
+        const tagChamps = featured.filter((p) => p.tagline === 'Ground Zero Tag Team Champion')
+        if (gzChamp && tagChamps.length === 2) {
+            return [tagChamps[0], gzChamp, tagChamps[1]]
+        }
+        return featured
+    })()
 
 -
     const rosterWrestlers = rosterPeople.filter((p) => (p.rosterRole || 'wrestler') === 'wrestler')

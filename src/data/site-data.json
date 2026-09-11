@@ -1,25 +1,12 @@
 {
   "upcomingEvents": [
     {
-      "title": "Ground Zero x Wild Zero Dunn & Marcos 2",
-      "date": "August 29, 2026",
-      "venue": "Aerial Arts of Rochester",
-      "ticketUrl": "https://groundzeroshop.bigcartel.com/category/tickets",
-      "poster": "assets/img/events/dunnandmarcos2.jpg"
-    },
-    {
-      "title": "Wild Zero: Cunning but Brutal",
-      "date": "May 28, 2026",
-      "venue": "LUX",
-      "ticketUrl": "https://groundzeroshop.bigcartel.com/category/tickets",
-      "poster": ""
-    },
-    {
       "title": "Ground Zero - Chapter 11",
       "date": "September 20, 2026",
       "venue": "Aerial Arts of Rochester",
-      "ticketUrl": "",
-      "poster": ""
+      "ticketUrl": "https://rochesterfringe.com/tickets-and-shows/ground-zero",
+      "poster": "assets/img/events/chapter11.jpg",
+      "eventsPoster": "assets/img/events/chapter11-price.jpg"
     }
   ],
   "seminarGuests": [
@@ -60,6 +47,67 @@
     }
   ],
   "results": [
+    {
+      "date": "August 29, 2026",
+      "event": "Ground Zero x Wild Zero Dunn & Marcos 2",
+      "matches": [
+        {
+          "match": "Tag Team Battle Royal",
+          "result": "Wrong Turn (Krist Worthless & Dexter Sawyer) win",
+          "notes": "Earn the final spot in the Dunn & Marcos Cup"
+        },
+        {
+          "match": "Dunn & Marcos Cup Round 1",
+          "result": "Starstruck defeat St★rburst",
+          "notes": "Advance to Round 2"
+        },
+        {
+          "match": "Dunn & Marcos Cup Round 1",
+          "result": "High Seas defeat Miracle Generation",
+          "notes": "Advance to Round 2"
+        },
+        {
+          "match": "Dunn & Marcos Cup Round 1",
+          "result": "The Production defeat xEdgeOfHopex",
+          "notes": "Advance to Round 2"
+        },
+        {
+          "match": "Dunn & Marcos Cup Round 1",
+          "result": "Primetime defeat Wrong Turn, Fallout Theory, and My Chemical Bromance",
+          "notes": "Advance to Round 2"
+        },
+        {
+          "match": "Dunn & Marcos Cup Semifinal",
+          "result": "High Seas defeat Primetime",
+          "notes": "Advance to the Finals"
+        },
+        {
+          "match": "Dunn & Marcos Cup Semifinal",
+          "result": "Starstruck defeat The Production",
+          "notes": "Advance to the Finals"
+        },
+        {
+          "match": "King of Zero Grand Prix",
+          "result": "Cheech (c) defeats Pat Sawyer",
+          "notes": ""
+        },
+        {
+          "match": "Scramble Match",
+          "result": "Julio Diamanté defeats CJ Settles, Colt Allen, Hellbrid, Darren Crowe, and Seabass Finn",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Match",
+          "result": "Price Purgold defeats Chael Connors (c)",
+          "notes": "TITLE CHANGE"
+        },
+        {
+          "match": "Dunn & Marcos Cup Final",
+          "result": "Starstruck defeat High Seas",
+          "notes": "Starstruck win the 2026 Dunn & Marcos Cup"
+        }
+      ]
+    },
     {
       "date": "May 17, 2026",
       "event": "Ground Zero - Chapter 10",
@@ -650,8 +698,8 @@
     "overview": [
       {
         "championship": "Ground Zero",
-        "champions": "Chael Connors",
-        "since": "November 16, 2025"
+        "champions": "Price Purgold",
+        "since": "August 29, 2026"
       },
       {
         "championship": "Ground Zero Tag Team",
@@ -665,10 +713,16 @@
         "holdersLabel": "Champion",
         "reigns": [
           {
+            "number": 3,
+            "holders": "Price Purgold",
+            "won": "Aug 29, 2026",
+            "lost": "Present"
+          },
+          {
             "number": 2,
             "holders": "Chael Connors",
             "won": "Nov 16, 2025",
-            "lost": "Present"
+            "lost": "Aug 29, 2026"
           },
           {
             "number": 1,
