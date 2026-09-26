@@ -45,9 +45,9 @@ block content
                             strong #{nextEvent.title}
                             |  — #{nextEvent.date}#{nextEvent.venue ? ' at ' + nextEvent.venue : ''}
                         p.text-muted.mb-4
-                            | Part of the Rochester Fringe Festival. Tickets via Fringe, plus merch in the Ground Zero shop.
+                            | #{nextEvent.ticketNote || 'Tickets available through the event listing, plus merch in the Ground Zero shop.'}
                         if nextEvent.ticketUrl
-                            a.btn.btn-primary.btn-xl(href=nextEvent.ticketUrl, rel='noopener noreferrer', target='_blank') Buy Tickets
+                            a.btn.btn-primary.btn-xl(href=nextEvent.ticketUrl, rel='noopener noreferrer', target='_blank')= nextEvent.ticketLabel || 'Buy Tickets'
                         else
                             a.btn.btn-primary.btn-xl(href='https://groundzeroshop.bigcartel.com/category/tickets') Buy Tickets
                     else

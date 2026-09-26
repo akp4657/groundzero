@@ -25,8 +25,10 @@ block content
                                         span.text-muted.small #{ev.date}
                                         if ev.venue
                                             span.text-muted.small  — #{ev.venue}
+                                        if ev.ticketNote
+                                            span.d-block.small.text-muted= ev.ticketNote
                                     if ev.ticketUrl
-                                        a.btn.btn-sm.btn-primary.align-self-md-end.flex-shrink-0(href=ev.ticketUrl, rel='noopener noreferrer', target='_blank') Tickets
+                                        a.btn.btn-sm.btn-primary.align-self-md-end.flex-shrink-0(href=ev.ticketUrl, rel='noopener noreferrer', target='_blank')= ev.ticketLabel || 'Tickets'
                                     else
                                         span.small.text-muted.align-self-md-end.flex-shrink-0 On sale TBA
 
@@ -45,8 +47,10 @@ block content
                                 h2.h4.gz-event-card__title.mb-0= featuredEvent.title
                                 p.text-muted.gz-event-card__lede.mb-0
                                     | #{featuredEvent.date}#{featuredEvent.venue ? ' at ' + featuredEvent.venue : ''}
+                                if featuredEvent.ticketNote
+                                    p.small.text-muted.mb-3= featuredEvent.ticketNote
                                 if featuredEvent.ticketUrl
-                                    a.btn.btn-primary.mt-auto(href=featuredEvent.ticketUrl, rel='noopener noreferrer', target='_blank') Buy Tickets
+                                    a.btn.btn-primary.mt-auto(href=featuredEvent.ticketUrl, rel='noopener noreferrer', target='_blank')= featuredEvent.ticketLabel || 'Buy Tickets'
                                 else
                                     p.small.text-muted.mt-auto.mb-0 Tickets announced soon.
                 else

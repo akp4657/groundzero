@@ -1,12 +1,13 @@
 {
   "upcomingEvents": [
     {
-      "title": "Ground Zero - Chapter 11",
-      "date": "September 20, 2026",
-      "venue": "Aerial Arts of Rochester",
-      "ticketUrl": "https://rochesterfringe.com/tickets-and-shows/ground-zero",
-      "poster": "assets/img/events/chapter11.jpg",
-      "eventsPoster": "assets/img/events/chapter11-price.jpg"
+      "title": "Upstate Uproar Gaming Festival 2026",
+      "date": "November 7–8, 2026",
+      "venue": "Rochester, NY",
+      "ticketUrl": "https://www.start.gg/tournament/upstate-uproar-gaming-festival-2026/details",
+      "poster": "assets/img/events/uugf.jfif",
+      "ticketNote": "A festival pass is required for entry.",
+      "ticketLabel": "Buy Festival Pass"
     }
   ],
   "seminarGuests": [
@@ -47,6 +48,57 @@
     }
   ],
   "results": [
+    {
+      "date": "September 20, 2026",
+      "event": "Ground Zero - Chapter 11",
+      "matches": [
+        {
+          "match": "Showcase Match",
+          "result": "Tyler Echo defeats Jack Issac, Lil Skittle, and Tyler James Epixx",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Summit Tournament Finals",
+          "result": "Darren Crowe defeats Ryze",
+          "notes": ""
+        },
+        {
+          "match": "Tag Team Match",
+          "result": "St★rburst defeat Trixzy Foolery",
+          "notes": ""
+        },
+        {
+          "match": "Singles Match",
+          "result": "Julio Diamanté defeats Colt Allen",
+          "notes": ""
+        },
+        {
+          "match": "Chairs Are Legal Match",
+          "result": "Cheech defeats CJ Settles",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Tag Team Title Match",
+          "result": "High Seas defeat Primetime (c)",
+          "notes": "TITLE CHANGE"
+        },
+        {
+          "match": "Singles Match",
+          "result": "Charlie Locke defeats Groff",
+          "notes": "via Disqualification"
+        },
+        {
+          "match": "Eight-Man Tag Team Match",
+          "result": "Yung Boiz, Scott Richards, Hellbrid, and Drew Hawkins defeat Wrong Turn & xEdgeOfHopex",
+          "notes": ""
+        },
+        {
+          "match": "Ground Zero Title Ladder Match",
+          "result": "Chael Connors defeats Price Purgold (c)",
+          "notes": "TITLE CHANGE"
+        }
+      ]
+    },
     {
       "date": "August 29, 2026",
       "event": "Ground Zero x Wild Zero Dunn & Marcos 2",
@@ -698,13 +750,13 @@
     "overview": [
       {
         "championship": "Ground Zero",
-        "champions": "Price Purgold",
-        "since": "August 29, 2026"
+        "champions": "Chael Connors",
+        "since": "September 20, 2026"
       },
       {
         "championship": "Ground Zero Tag Team",
-        "champions": "Primetime",
-        "since": "March 8, 2026"
+        "champions": "High Seas",
+        "since": "September 20, 2026"
       }
     ],
     "lineage": [
@@ -713,22 +765,32 @@
         "holdersLabel": "Champion",
         "reigns": [
           {
+            "number": 4,
+            "holders": "Chael Connors",
+            "won": "Sep 20, 2026",
+            "lost": "Present",
+            "image": "assets/img/roster/GZChamps/gzchamp4.jpg"
+          },
+          {
             "number": 3,
             "holders": "Price Purgold",
             "won": "Aug 29, 2026",
-            "lost": "Present"
+            "lost": "Sep 20, 2026",
+            "image": "assets/img/roster/GZChamps/gzchamp3.jpg"
           },
           {
             "number": 2,
             "holders": "Chael Connors",
             "won": "Nov 16, 2025",
-            "lost": "Aug 29, 2026"
+            "lost": "Aug 29, 2026",
+            "image": "assets/img/roster/GZChamps/gzchamp2.jpg"
           },
           {
             "number": 1,
             "holders": "CJ Settles",
             "won": "Feb 16, 2025",
-            "lost": "Nov 16, 2025"
+            "lost": "Nov 16, 2025",
+            "image": "assets/img/roster/GZChamps/gzchamp1.jpg"
           }
         ]
       },
@@ -737,16 +799,68 @@
         "holdersLabel": "Champions",
         "reigns": [
           {
+            "number": 3,
+            "holders": "High Seas",
+            "won": "Sep 20, 2026",
+            "lost": "Present",
+            "image": "assets/img/roster/GZTagChamps/tagchamps3.jpg"
+          },
+          {
             "number": 2,
             "holders": "Primetime",
             "won": "Mar 8, 2026",
-            "lost": "Present"
+            "lost": "Sep 20, 2026"
           },
           {
             "number": 1,
             "holders": "St★rburst",
             "won": "Sep 13, 2025",
-            "lost": "Mar 8, 2026"
+            "lost": "Mar 8, 2026",
+            "image": "assets/img/roster/GZTagChamps/tagchamps1.jpg"
+          }
+        ]
+      }
+    ],
+    "tournaments": [
+      {
+        "title": "Ground Zero Summit Tournament",
+        "winnersLabel": "Winner",
+        "winners": [
+          {
+            "number": 3,
+            "holders": "Darren Crowe",
+            "won": "Sep 20, 2026",
+            "image": "assets/img/roster/SummitWinners/crowe_gzst_26.jpg"
+          },
+          {
+            "number": 2,
+            "holders": "Price Purgold",
+            "won": "Nov 16, 2025",
+            "image": "assets/img/roster/SummitWinners/price_gzst_26.jpg"
+          },
+          {
+            "number": 1,
+            "holders": "Chael Connors",
+            "won": "Nov 10, 2024",
+            "image": "assets/img/roster/SummitWinners/connors_gzst_26.jpg"
+          }
+        ]
+      },
+      {
+        "title": "Dunn & Marcos Cup",
+        "winnersLabel": "Winners",
+        "winners": [
+          {
+            "number": 2,
+            "holders": "Starstruck",
+            "won": "Aug 29, 2026",
+            "image": "assets/img/roster/DNMWinners/starstruck_dnm26.jpg"
+          },
+          {
+            "number": 1,
+            "holders": "High Seas",
+            "won": "Sep 14, 2025",
+            "image": "assets/img/roster/DNMWinners/highseas_dnm26.jpg"
           }
         ]
       }

@@ -1,5 +1,28 @@
 extends layouts/base
 
+mixin historyCarousel(carouselId, slides)
+    if slides && slides.length
+        .gz-history-carousel
+            .carousel.slide.carousel-fade(
+                id=carouselId,
+                data-bs-ride='carousel',
+                data-bs-interval='4500',
+                data-bs-pause='hover',
+                data-bs-touch='true',
+                aria-label='Champion photo history'
+            )
+                .carousel-inner
+                    each slide, slideIdx in slides
+                        .carousel-item(class=slideIdx === 0 ? 'active' : undefined)
+                            img(
+                                src=slide.image,
+                                alt=slide.holders,
+                                loading=slideIdx === 0 ? 'eager' : 'lazy',
+                                decoding='async'
+                            )
+                            .carousel-caption
+                                p ##{slide.number} #{slide.holders}
+
 append variables
     - pageTitle = 'Title history | Ground Zero Wrestling'
     - pageDescription = 'Complete championship lineage for Ground Zero Wrestling titles.'
@@ -13,24 +36,56 @@ block content
 
     section.page-section
         .container.px-4.px-lg-5
-            each championship in siteData.titles.lineage
-                h2.h4= championship.title
-                .table-responsive.gz-table-red-frame.mb-5
-                    table.table.table-sm.table-bordered
-                        thead.table-light
-                            tr
-                                th(scope='col') #
-                                th(scope='col')= championship.holdersLabel
-                                th(scope='col') Won
-                                th(scope='col') Lost
-                                th(scope='col') Days
-                        tbody
-                            each reign in championship.reigns
-                                - const reignDays = getReignDays(reign.won, reign.lost)
-                                - const isCurrentReign = String(reign.lost || '').toLowerCase() === 'present'
-                                tr
-                                    td= reign.number
-                                    td= reign.holders
-                                    td= reign.won
-                                    td= reign.lost
-                                    td= reignDays === '—' ? reignDays : `${reignDays}${isCurrentReign ? '+' : ''}`
+            each championship, champIdx in siteData.titles.lineage
+                -
+                    const champSlides = (championship.reigns || []).filter((r) => r.image)
+                    const champCarouselId = `gzHistoryCarouselChamp${champIdx}`
+                h2.h4.mb-3= championship.title
+                .row.g-4.mb-5.align-items-start
+                    if champSlides.length
+                        .col-sm-6.col-md-4.col-lg-3
+                            +historyCarousel(champCarouselId, champSlides)
+                    .col(class=champSlides.length ? 'col-md-8 col-lg-9' : 'col-12')
+                        .table-responsive.gz-table-red-frame.mb-0
+                            table.table.table-sm.table-bordered.mb-0
+                                thead.table-light
+                                    tr
+                                        th(scope='col') #
+                                        th(scope='col')= championship.holdersLabel
+                                        th(scope='col') Won
+                                        th(scope='col') Lost
+                                        th(scope='col') Days
+                                tbody
+                                    each reign in championship.reigns
+                                        - const reignDays = getReignDays(reign.won, reign.lost)
+                                        - const isCurrentReign = String(reign.lost || '').toLowerCase() === 'present'
+                                        tr
+                                            td= reign.number
+                                            td= reign.holders
+                                            td= reign.won
+                                            td= reign.lost
+                                            td= reignDays === '—' ? reignDays : `${reignDays}${isCurrentReign ? '+' : ''}`
+
+            each tournament, tourneyIdx in siteData.titles.tournaments || []
+                -
+                    const tourneySlides = (tournament.winners || []).filter((w) => w.image)
+                    const tourneyCarouselId = `gzHistoryCarouselTourney${tourneyIdx}`
+                h2.h4.mb-3= tournament.title
+                .row.g-4.mb-5.align-items-start
+                    if tourneySlides.length
+                        .col-sm-6.col-md-4.col-lg-3
+                            +historyCarousel(tourneyCarouselId, tourneySlides)
+                    .col(class=tourneySlides.length ? 'col-md-8 col-lg-9' : 'col-12')
+                        .table-responsive.gz-table-red-frame.mb-0
+                            table.table.table-sm.table-bordered.mb-0
+                                thead.table-light
+                                    tr
+                                        th(scope='col') #
+                                        th(scope='col')= tournament.winnersLabel
+                                        th(scope='col') Date
+                                tbody
+                                    each win in tournament.winners
+                                        tr
+                                            td= win.number
+                                            td= win.holders
+                                            td= win.won

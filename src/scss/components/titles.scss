@@ -1,0 +1,61 @@
+// Title history — quiet auto-advancing photo carousels
+
+.gz-history-carousel {
+    max-width: 18rem;
+    margin: 0 auto;
+    border: 1px solid $gz-surface-dark-border;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    background: $gz-surface-dark;
+    box-shadow: 0 0.35rem 1rem rgba($gz-black, 0.22);
+
+    .carousel-item {
+        background: $gz-gray-900;
+    }
+
+    .carousel-item img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    .carousel-caption {
+        right: 0;
+        left: 0;
+        bottom: 0;
+        padding: 1.75rem 0.65rem 0.55rem;
+        margin: 0;
+        text-align: center;
+        background: linear-gradient(
+            to top,
+            rgba($gz-black, 0.82) 0%,
+            rgba($gz-black, 0.35) 55%,
+            transparent 100%
+        );
+
+        p {
+            margin: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            line-height: 1.25;
+            color: $gz-white;
+            text-shadow: 0 1px 2px rgba($gz-black, 0.55);
+        }
+    }
+
+    // Keep controls/indicators out — auto-scroll only
+    .carousel-control-prev,
+    .carousel-control-next,
+    .carousel-indicators {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .gz-history-carousel {
+        margin: 0;
+    }
+}
