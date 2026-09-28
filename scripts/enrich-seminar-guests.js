@@ -27,7 +27,7 @@ function listSeminarFiles(seminarsDir) {
 
     return fs
         .readdirSync(seminarsDir)
-        .filter((file) => /\.(jpe?g|png|webp|gif)$/i.test(file));
+        .filter((file) => /\.(jpe?g|jfif|png|webp|gif)$/i.test(file));
 }
 
 function findFullNameImage(files, guestName) {
