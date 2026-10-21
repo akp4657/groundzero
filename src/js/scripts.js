@@ -18,6 +18,19 @@ window.addEventListener('DOMContentLoaded', () => {
     navbarShrink();
     document.addEventListener('scroll', navbarShrink);
 
+    const masthead = document.querySelector('header.masthead');
+    if (masthead && navbarCollapsible && window.ResizeObserver) {
+        const syncMastheadOffset = () => {
+            masthead.style.setProperty(
+                '--gz-masthead-offset',
+                `${navbarCollapsible.getBoundingClientRect().height}px`
+            );
+        };
+        syncMastheadOffset();
+        const mastheadOffsetObserver = new ResizeObserver(syncMastheadOffset);
+        mastheadOffsetObserver.observe(navbarCollapsible);
+    }
+
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(document.querySelectorAll('#navbarResponsive .nav-link'));
     responsiveNavItems.forEach((responsiveNavItem) => {
@@ -27,42 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    const gzEventsCardsRow = document.getElementById('gz-events-cards');
-    if (gzEventsCardsRow) {
-        const syncGzEventMediaStrips = () => {
-            const strips = Array.from(gzEventsCardsRow.querySelectorAll('.gz-event-card__media'));
-            if (strips.length < 2) {
-                return;
-            }
-
-            strips.forEach((strip) => {
-                strip.style.height = '';
-            });
-
-            const maxH = Math.max(
-                ...strips.map((strip) => strip.getBoundingClientRect().height),
-                0
-            );
-
-            if (maxH > 0) {
-                strips.forEach((strip) => {
-                    strip.style.height = `${Math.ceil(maxH)}px`;
-                });
-            }
-        };
-
-        window.addEventListener('load', syncGzEventMediaStrips);
-        requestAnimationFrame(() => {
-            requestAnimationFrame(syncGzEventMediaStrips);
-        });
-
-        let resizeTimer;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(syncGzEventMediaStrips, 80);
-        });
-    }
 
     const initSeminarGuestModal = () => {
         const root = document.getElementById('seminars-at-ground-zero');

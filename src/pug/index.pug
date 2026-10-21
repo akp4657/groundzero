@@ -12,22 +12,20 @@ append variables
 
 block content
     header.masthead
-        .container.px-4.px-lg-5.h-100
-            .row.gx-4.gx-lg-5.h-100.align-items-center.justify-content-center.text-center
-                .col-lg-8.align-self-end
-                    img.gz-masthead-wordmark.mb-3.mb-md-4(
+        .container.px-4.px-lg-5
+            .gz-masthead-stack.text-center
+                .gz-masthead-logo
+                    img.gz-masthead-wordmark(
                         src='assets/img/brand/wordmark-bw.png',
                         alt='Ground Zero Wrestling'
                     )
-                    h1.text-white.font-weight-bold Respect the Craft
-                    hr.divider
-                .col-lg-8.align-self-baseline
-                    p.text-white-75.mb-4
-                        | Rochester, NY’s premiere professional wrestling training facility and home for live events.
-                        | Open Tuesday and Wednesday 5:30pm-9:30pm.
-                    .d-flex.flex-column.flex-sm-row.gap-3.justify-content-center
-                        a.btn.btn-primary.btn-xl(href='#events') Events &amp; Tickets
-                        a.btn.btn-light.btn-xl(href='school.html') Train with us
+                h1.text-white.font-weight-bold Respect the Craft
+                p.text-white-75.mb-4
+                    | Rochester, NY’s premiere professional wrestling training facility and home for live events.
+                    | Open Tuesday and Wednesday 5:30pm-9:30pm.
+                .d-flex.flex-column.flex-sm-row.gap-3.justify-content-center
+                    a.btn.btn-primary.btn-xl(href='#events') Events &amp; Tickets
+                    a.btn.btn-light.btn-xl(href='school.html') Train with us
 
     section#events.page-section
         .container.px-4.px-lg-5
@@ -59,12 +57,16 @@ block content
         .container.px-4.px-lg-5
             .row.justify-content-center
                 .col-lg-10.text-center
-                    h2.text-white.mt-0 School
+                    h2.text-white.mt-0.mb-4 School
                     hr.divider.divider-light
-                    p.text-white-75.mb-4
+                    img.img-fluid.rounded.shadow-sm.mb-4.border.border-3.border-white(
+                        src='assets/img/coaches/GZ_School.jpg',
+                        alt='Ground Zero School training promotion'
+                    )
+                    p.text-white.mb-4
                         | Fully equipped training facility with coaches who have worked across major promotions. New and experienced
                         |  students build fundamentals, character, and match psychology.
-                    a.btn.btn-light.btn-xl(href='school.html') Train With Us
+                    a.btn.btn-light.btn-xl(href='school.html') School Details
 
     section#results.page-section
         .container.px-4.px-lg-5

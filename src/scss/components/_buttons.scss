@@ -4,11 +4,45 @@
 
 //- Custom XL button styling
 
+.btn {
+    border-style: solid;
+    border-width: 0.2em;
+}
+
+.btn-primary {
+    --bs-btn-border-color: #{$gz-white};
+    --bs-btn-hover-border-color: #{$gz-white};
+    --bs-btn-active-border-color: #{$gz-white};
+    --bs-btn-disabled-border-color: #{$gz-white};
+}
+
+.btn-light {
+    --bs-btn-border-color: #{$gz-gray-900};
+    --bs-btn-hover-border-color: #{$gz-gray-900};
+    --bs-btn-active-border-color: #{$gz-gray-900};
+    --bs-btn-disabled-border-color: #{$gz-gray-900};
+}
+
+// Hero call to action — red field and yellow stroke, matching the wordmark.
+header.masthead .btn-primary {
+    --bs-btn-color: #{$gz-white};
+    --bs-btn-bg: #{$gz-red};
+    --bs-btn-border-color: #{$gz-yellow};
+    --bs-btn-hover-color: #{$gz-red};
+    --bs-btn-hover-bg: #{$gz-yellow};
+    --bs-btn-hover-border-color: #{$gz-yellow};
+    --bs-btn-active-color: #{$gz-red};
+    --bs-btn-active-bg: #{darken($gz-yellow, 8%)};
+    --bs-btn-active-border-color: #{$gz-yellow};
+    --bs-btn-disabled-color: #{$gz-white};
+    --bs-btn-disabled-bg: #{$gz-red};
+    --bs-btn-disabled-border-color: #{$gz-yellow};
+}
+
 .btn-xl {
     padding: 1.25rem 2.25rem;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    border: none;
     border-radius: 10rem;
 }

@@ -3,8 +3,15 @@
 // 
 
 header.masthead {
-    padding-top: 10rem;
-    padding-bottom: calc(10rem - #{$navbar-height});
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    // Falls back to the shared navbar token until the live navbar height is measured.
+    // The same inset at the bottom keeps the buttons off the next section.
+    padding-top: var(--gz-masthead-offset, #{$navbar-height});
+    padding-bottom: calc(var(--gz-masthead-offset, #{$navbar-height}) / 2);
 
     background: linear-gradient(
             to bottom,
@@ -17,13 +24,45 @@ header.masthead {
     background-attachment: scroll;
     background-size: cover;
 
+    > .container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        min-height: 0;
+        width: 100%;
+    }
+
+    .gz-masthead-stack {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 0;
+        width: 100%;
+
+        > :not(.gz-masthead-logo) {
+            flex: 0 0 auto;
+        }
+    }
+
+    // Logo takes whatever space the headline, copy, and buttons leave in the viewport.
+    .gz-masthead-logo {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        min-height: 0;
+        width: 100%;
+    }
+
     .gz-masthead-wordmark {
         display: block;
-        width: auto;
-        height: auto;
-        max-width: 100%;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
     }
 
     h1 {
@@ -31,11 +70,6 @@ header.masthead {
     }
 
     @include media-breakpoint-up(lg) {
-        height: 100vh;
-        min-height: 40rem;
-        padding-top: $navbar-height;
-        padding-bottom: 0;
-
         p {
             font-size: 1.15rem;
         }
